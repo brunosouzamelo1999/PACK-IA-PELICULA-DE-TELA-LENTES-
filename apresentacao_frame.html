@@ -646,6 +646,50 @@
             gap: 6px !important;
         }
     }
+    
+        /* COLLAPSIBLE PROMPT TEXT (5-6 LINES MAX) */
+        .prompt-text {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: #1e293b;
+            line-height: 1.5;
+            white-space: pre-wrap;
+            background: #ffffff;
+            padding: 0.85rem 1rem;
+            border-radius: var(--radius-sm);
+            border: 1px solid #cbd5e1;
+            border-left: 4px solid var(--accent-cyan);
+            word-break: break-word;
+            max-height: 7.2rem !important; /* ~5 to 6 lines max */
+            overflow: hidden;
+            transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+        }
+
+        .prompt-text.expanded {
+            max-height: 3000px !important;
+        }
+
+        .read-more-btn {
+            background: none;
+            border: none;
+            color: #0284c7;
+            font-size: 0.8rem;
+            font-weight: 700;
+            cursor: pointer;
+            padding: 4px 0 0 0;
+            margin-top: 6px;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .read-more-btn:hover {
+            color: #0369a1;
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -709,6 +753,7 @@
 • Nomes 1 a 5: Nomes diretos e de impacto para as linhas principais (Safira, Titânio, Diamond Shield e Optic Guard).
 • Nomes 6 a 10: Variações avançadas criadas com sinônimos técnicos e adjetivos diferentes.
 Para cada nome apresente estritamente o formato: NOME - SUBTÍTULO sugerido.</div>
+						<button class="read-more-btn" onclick="toggleReadMore('pn1', this)">Ler mais <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
                     </div>
 
                     <!-- CAIXA DE ENTRADA DO SUBTÍTULO -->
@@ -728,6 +773,7 @@ Para cada nome apresente estritamente o formato: NOME - SUBTÍTULO sugerido.</di
                             </button>
                         </div>
                         <div class="prompt-text" id="p1">...</div>
+						<button class="read-more-btn" onclick="toggleReadMore('p1', this)">Ler mais <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
                     </div>
                 </div>
 
@@ -775,6 +821,7 @@ Para cada nome apresente estritamente o formato: NOME - SUBTÍTULO sugerido.</di
                             </button>
                         </div>
                         <div class="prompt-text" id="pl1">...</div>
+						<button class="read-more-btn" onclick="toggleReadMore('pl1', this)">Ler mais <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
                     </div>
 
                     <!-- PROMPT LOTE 2 -->
@@ -786,6 +833,7 @@ Para cada nome apresente estritamente o formato: NOME - SUBTÍTULO sugerido.</di
                             </button>
                         </div>
                         <div class="prompt-text" id="pl2">...</div>
+						<button class="read-more-btn" onclick="toggleReadMore('pl2', this)">Ler mais <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
                     </div>
                 </div>
 
@@ -807,6 +855,7 @@ Para cada nome apresente estritamente o formato: NOME - SUBTÍTULO sugerido.</di
                             </button>
                         </div>
                         <div class="prompt-text" id="p2c">...</div>
+						<button class="read-more-btn" onclick="toggleReadMore('p2c', this)">Ler mais <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
                     </div>
                 </div>
             </div>
@@ -834,6 +883,7 @@ Para cada nome apresente estritamente o formato: NOME - SUBTÍTULO sugerido.</di
                             </button>
                         </div>
                         <div class="prompt-text" id="pl3">...</div>
+						<button class="read-more-btn" onclick="toggleReadMore('pl3', this)">Ler mais <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
                     </div>
 
                     <!-- PROMPT LOTE 4 -->
@@ -845,6 +895,7 @@ Para cada nome apresente estritamente o formato: NOME - SUBTÍTULO sugerido.</di
                             </button>
                         </div>
                         <div class="prompt-text" id="pl4">...</div>
+						<button class="read-more-btn" onclick="toggleReadMore('pl4', this)">Ler mais <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
                     </div>
                 </div>
 
@@ -866,6 +917,7 @@ Para cada nome apresente estritamente o formato: NOME - SUBTÍTULO sugerido.</di
                             </button>
                         </div>
                         <div class="prompt-text" id="p3c">...</div>
+						<button class="read-more-btn" onclick="toggleReadMore('p3c', this)">Ler mais <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
                     </div>
                 </div>
             </div>
@@ -892,6 +944,7 @@ Para cada nome apresente estritamente o formato: NOME - SUBTÍTULO sugerido.</di
                             </button>
                         </div>
                         <div class="prompt-text" id="p4">...</div>
+						<button class="read-more-btn" onclick="toggleReadMore('p4', this)">Ler mais <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
                     </div>
                 </div>
 
@@ -954,6 +1007,7 @@ Para cada nome apresente estritamente o formato: NOME - SUBTÍTULO sugerido.</di
                             </button>
                         </div>
                         <div class="prompt-text" id="p6">...</div>
+						<button class="read-more-btn" onclick="toggleReadMore('p6', this)">Ler mais <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
                     </div>
                 </div>
 
@@ -1287,6 +1341,20 @@ Para cada nome apresente estritamente o formato: NOME - SUBTÍTULO sugerido.`
             initDots();
             setFrameMode('standard');
         };
-    </script>
+    
+
+    function toggleReadMore(promptId, btn) {
+        const el = document.getElementById(promptId);
+        if (!el) return;
+        if (el.classList.contains('expanded')) {
+            el.classList.remove('expanded');
+            btn.innerHTML = 'Ler mais <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>';
+        } else {
+            el.classList.add('expanded');
+            btn.innerHTML = 'Ler menos <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24"><path d="M7 14l5-5 5 5z"/></svg>';
+        }
+    }
+
+</script>
 </body>
 </html>

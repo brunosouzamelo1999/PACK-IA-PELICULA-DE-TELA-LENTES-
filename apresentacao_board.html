@@ -660,6 +660,31 @@
             color: #0369a1;
             text-decoration: underline;
         }
+    
+        /* VIBE & PALETTE SELECTOR BUTTONS */
+        .vibe-btn {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            color: #334155;
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 6px 14px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .vibe-btn:hover {
+            border-color: #0284c7;
+            color: #0284c7;
+        }
+
+        .vibe-btn.active {
+            background: linear-gradient(135deg, #0284c7, #2563eb);
+            color: #ffffff;
+            border-color: transparent;
+            box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+        }
     </style>
 </head>
 <body>
@@ -687,7 +712,8 @@
 
  <!-- DYNAMIC VARIABLE INPUTS BAR (CENTRALIZED PROPORTION BADGE) -->
  <div class="var-bar">
- <div class="mode-badge-static">LINHA BOARD (209 × 402 mm)</div>
+  <div class="mode-badge-static">LINHA BOARD (209 × 402 mm)</div>
+  </div>
  </div>
 
  <!-- SLIDE VIEWPORT -->
@@ -970,6 +996,31 @@ Para cada nome apresente estritamente o formato: NOME - SUBTÍTULO sugerido.</di
 						<input type="text" id="inputBeneficios" class="var-input" style="width: 100%; font-size: 0.9rem; padding: 10px 14px;" value="1. ULTRAFINA E RESISTENTE • 2. 5X MAIS RESISTENTE • 3. ALTA DEFINIÇÃO • 4. TOQUE SUAVE • 5. FÁCIL INSTALAÇÃO" oninput="updatePrompts()" placeholder="Ex: 1. ULTRAFINA • 2. ALTA DEFINIÇÃO • 3. TOQUE SUAVE">
 					</div>
 
+					<!-- CAIXA DE ENTRADA DAS REDES SOCIAIS E SITE NO VERSO -->
+					<div class="prompt-card" style="margin-top: 1.25rem; background: rgba(124, 58, 237, 0.04); border-color: rgba(124, 58, 237, 0.25);">
+						<div class="prompt-card-header" style="margin-bottom: 0.5rem;">
+							<span class="prompt-label" style="color: var(--accent-purple);">Redes Sociais & Site no Verso (Rodapé):</span>
+						</div>
+						<div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 0.75rem;">
+							<div>
+								<label style="font-size: 0.75rem; font-weight: 700; color: #475569; display: block; margin-bottom: 4px;">Instagram:</label>
+								<input type="text" id="inputInstagram" class="var-input" style="width: 100%; font-size: 0.85rem; padding: 8px 12px;" value="@cason.oficial" oninput="updatePrompts()">
+							</div>
+							<div>
+								<label style="font-size: 0.75rem; font-weight: 700; color: #475569; display: block; margin-bottom: 4px;">Facebook:</label>
+								<input type="text" id="inputFacebook" class="var-input" style="width: 100%; font-size: 0.85rem; padding: 8px 12px;" value="fb.com/cason.oficial" oninput="updatePrompts()">
+							</div>
+							<div>
+								<label style="font-size: 0.75rem; font-weight: 700; color: #475569; display: block; margin-bottom: 4px;">Twitter / X:</label>
+								<input type="text" id="inputTwitter" class="var-input" style="width: 100%; font-size: 0.85rem; padding: 8px 12px;" value="@cason_oficial" oninput="updatePrompts()">
+							</div>
+							<div>
+								<label style="font-size: 0.75rem; font-weight: 700; color: #475569; display: block; margin-bottom: 4px;">Website / Site Oficial:</label>
+								<input type="text" id="inputWebsite" class="var-input" style="width: 100%; font-size: 0.85rem; padding: 8px 12px;" value="www.cason.com.br" oninput="updatePrompts()">
+							</div>
+						</div>
+					</div>
+
 					<!-- PROMPT 4B: ARTE 2D VERSO -->
 					<div class="prompt-card" style="margin-top: 1.25rem;">
 						<div class="prompt-card-header">
@@ -1069,6 +1120,8 @@ Para cada nome apresente estritamente o formato: NOME - SUBTÍTULO sugerido.</di
 
  <!-- JAVASCRIPT LOGIC DEDICATED TO BOARD LINE (209:402) -->
  <script>
+    
+
  let currentSlide = 1;
  const totalSlides = 6;
  const proporcao = '209:402';
@@ -1110,7 +1163,7 @@ No centro de cada quadro, exiba a ilustração do smartphone moderno destacando 
 
 		p4Text: `Padronização rígida de proporção: Pegue exclusivamente a cartela escolhida da imagem anexada e renderize-a isolada como uma arte 2D plana contínua preenchendo 100% da tela na proporção física exata '[PROPORCAO]'. Re-enquadre e preserve integralmente TODOS os elementos gráficos da imagem anexada: mantenha perfeitamente o logo da marca, subtítulo '[SUBTITULO]' no terço superior e a ilustração central do produto. Reduza a escala do logo, do subtítulo e da ilustração do produto em 15% a 20%, mantendo margens de segurança limpas em relação às bordas da cartela. --ar [PROPORCAO] --no die-cut lines, no knife lines, no cutouts, no red contour lines, no holes, no 3d mockup, no shadows`,
 
-		p4bText: `Layout gráfico em 2D plano para a face traseira (verso) de embalagem retangular de película de tela, proporção [PROPORCAO]. Mantenha 100% da identidade visual, cores, textura de fundo e o logo da marca '[SUBTITULO]' no topo da imagem de referência anexada. Na metade esquerda, exiba APENAS a ilustração de uma película de vidro temperado 100% transparente com borda preta fina flutuando isolada (SEM CELULAR / SEM SMARTPHONE). Na metade direita, exiba uma lista vertical limpa com os ícones técnicos minimalistas em vetor alinhados com seus respectivos textos de benefícios: '[BENEFICIOS]'. Reduza a escala de todos os elementos em 15% a 20%, mantendo margens de segurança limpas e generosas em relação às bordas da cartela. --ar [PROPORCAO] --no smartphone, no phone, no mobile device, no 3d mockup, no box`,
+		p4bText: `Layout gráfico em 2D plano para a face traseira (verso) de embalagem retangular de película de tela, proporção [PROPORCAO]. Mantenha 100% da identidade visual, cores, textura de fundo e o logo da marca '[SUBTITULO]' no topo da imagem de referência anexada. Na metade esquerda, exiba APENAS a ilustração de uma película de vidro temperado 100% transparente com borda preta fina flutuando isolada (SEM CELULAR / SEM SMARTPHONE). Na metade direita, exiba uma lista vertical limpa com os ícones técnicos minimalistas em vetor alinhados com seus respectivos textos de benefícios: '[BENEFICIOS]'. No rodapé inferior do verso, exiba uma faixa limpa com a chamada 'SIGA NOSSAS REDES:' acompanhada dos ícones vetorizados oficiais de redes sociais e site com seus endereços: Instagram ([INSTAGRAM]), Facebook ([FACEBOOK]), Twitter/X ([TWITTER]) e Website ([WEBSITE]). Reduza a escala de todos os elementos em 15% a 20%, mantendo margens de segurança limpas e generosas em relação às bordas da cartela. --ar [PROPORCAO] --no qr code, no qrcode, no barcode, no smartphone, no phone, no mobile device, no 3d mockup, no box`,
 
 		p6Text: `Render 3D de estúdio fotorealista de embalagem de estojo duplo em polímero plástico transparente articulado, em pé e aberto sobre mesa de madeira limpa. A metade da FRENTE (à esquerda) possui o topo retangular liso sem cabideiro e exibe 100% da arte da segunda imagem anexada (SMARTPHONE + PELÍCULA FLUTUANTE SOBRE A TELA). APENAS a metade do VERSO (à direita) possui o cabideiro de polímero estendido no topo com furo Euro Slot e exibe 100% da arte da terceira imagem anexada (APENAS PELÍCULA ISOLADA SEM CELULAR AO LADO DOS 5 BENEFÍCIOS). Cada metade preserva a proporção vertical 209:402. Acabamento em polímero transparente brilhante, iluminação de estúdio commercial 8k. --ar 1:1 --no double hangers, no hanger on left side, no cardboard, no paper box`
 	};
@@ -1144,6 +1197,11 @@ Para cada benefício, sugira o ícone minimalista ideal.`
 		const beneficiosEl = document.getElementById('inputBeneficios');
 		const beneficios = beneficiosEl ? (beneficiosEl.value.trim() || '1. ULTRAFINA E RESISTENTE • 2. 5X MAIS RESISTENTE • 3. ALTA DEFINIÇÃO • 4. TOQUE SUAVE • 5. FÁCIL INSTALAÇÃO') : '1. ULTRAFINA E RESISTENTE • 2. 5X MAIS RESISTENTE • 3. ALTA DEFINIÇÃO • 4. TOQUE SUAVE • 5. FÁCIL INSTALAÇÃO';
 
+		const insta = (document.getElementById('inputInstagram') ? document.getElementById('inputInstagram').value.trim() : '@cason.oficial') || '@cason.oficial';
+		const face = (document.getElementById('inputFacebook') ? document.getElementById('inputFacebook').value.trim() : 'fb.com/cason.oficial') || 'fb.com/cason.oficial';
+		const twit = (document.getElementById('inputTwitter') ? document.getElementById('inputTwitter').value.trim() : '@cason_oficial') || '@cason_oficial';
+		const web = (document.getElementById('inputWebsite') ? document.getElementById('inputWebsite').value.trim() : 'www.cason.com.br') || 'www.cason.com.br';
+
 		const map = {
 			p1: db.p1Text,
 			pl1: db.pl1Text,
@@ -1163,6 +1221,9 @@ Para cada benefício, sugira o ícone minimalista ideal.`
 				let updatedText = map[key]
 					.replace(/\[SUBTITULO\]/g, subtitulo)
 					.replace(/\[BENEFICIOS\]/g, beneficios)
+							.replace(/\[INSTAGRAM\]/g, insta)
+					.replace(/\[FACEBOOK\]/g, face)
+					.replace(/\[TWITTER\]/g, twit)
 					.replace(/\[PROPORCAO\]/g, proporcao);
 				el.textContent = updatedText;
 			}

@@ -100,7 +100,7 @@
             border-bottom: 1px solid var(--border-color);
             padding: 0.75rem 2rem;
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
             gap: 1rem;
             flex-wrap: wrap;
@@ -150,7 +150,7 @@
         .slide-viewport {
             flex: 1;
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: flex-start;
             padding: 2rem;
             max-width: 1400px;
@@ -411,18 +411,34 @@
             color: #64748b;
         }
 
-        /* FOOTER CONTROL BAR */
+        /* FLOATING FOOTER CONTROL BAR */
         footer {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(16px);
-            border-top: 1px solid var(--border-color);
-            padding: 1rem 2rem;
-            position: sticky;
-            bottom: 0;
-            z-index: 100;
+            border: 1px solid rgba(2, 132, 199, 0.25);
+            box-shadow: 0 12px 32px rgba(15, 23, 42, 0.12);
+            padding: 0.6rem 1.5rem;
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 40px;
+            z-index: 1000;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            gap: 1.5rem;
+            flex-wrap: nowrap;
+        }
+
+        .slide-info-pill {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            background: rgba(2, 132, 199, 0.08);
+            border: 1px solid rgba(2, 132, 199, 0.2);
+            padding: 4px 14px;
+            border-radius: 20px;
+            white-space: nowrap;
         }
 
         .nav-btn-group {

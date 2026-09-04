@@ -1163,7 +1163,7 @@ No centro de cada quadro, exiba a ilustração do smartphone moderno destacando 
 
 		p4Text: `Padronização rígida de proporção: Pegue exclusivamente a cartela escolhida da imagem anexada e renderize-a isolada como uma arte 2D plana contínua preenchendo 100% da tela na proporção física exata '[PROPORCAO]'. Re-enquadre e preserve integralmente TODOS os elementos gráficos da imagem anexada: mantenha perfeitamente o logo da marca, subtítulo '[SUBTITULO]' no terço superior e a ilustração central do produto. Reduza a escala do logo, do subtítulo e da ilustração do produto em 15% a 20%, mantendo margens de segurança limpas em relação às bordas da cartela. --ar [PROPORCAO] --no die-cut lines, no knife lines, no cutouts, no red contour lines, no holes, no 3d mockup, no shadows`,
 
-		p4bText: `Layout gráfico em 2D plano para a face traseira (verso) de embalagem retangular de película de tela, proporção [PROPORCAO]. Mantenha 100% da identidade visual, cores, textura de fundo e o logo da marca '[SUBTITULO]' no topo da imagem de referência anexada. Na metade esquerda, exiba APENAS a ilustração de uma película de vidro temperado 100% transparente com borda preta fina flutuando isolada (SEM CELULAR / SEM SMARTPHONE). Na metade direita, exiba uma lista vertical limpa com os ícones técnicos minimalistas em vetor alinhados com seus respectivos textos de benefícios: '[BENEFICIOS]'. No rodapé inferior do verso, exiba uma faixa limpa com a chamada 'SIGA NOSSAS REDES:' acompanhada dos ícones vetorizados oficiais de redes sociais e site com seus endereços: Instagram ([INSTAGRAM]), Facebook ([FACEBOOK]), Twitter/X ([TWITTER]) e Website ([WEBSITE]). Reduza a escala de todos os elementos em 15% a 20%, mantendo margens de segurança limpas e generosas em relação às bordas da cartela. --ar [PROPORCAO] --no qr code, no qrcode, no barcode, no smartphone, no phone, no mobile device, no 3d mockup, no box`,
+		p4bText: `Layout gráfico em 2D plano para a face traseira (verso) de embalagem retangular de película de tela, proporção [PROPORCAO]. Mantenha 100% da identidade visual, cores, textura de fundo e o logo da marca '[SUBTITULO]' no topo da imagem de referência anexada. Na metade esquerda, exiba APENAS a ilustração de uma película de vidro temperado 100% transparente com borda preta fina flutuando isolada (SEM CELULAR / SEM SMARTPHONE). Na metade direita, exiba uma lista vertical limpa com os ícones técnicos minimalistas em vetor alinhados com seus respectivos textos de benefícios: '[BENEFICIOS]'. [RODAPE_REDES] Reduza a escala de todos os elementos em 15% a 20%, mantendo margens de segurança limpas e generosas em relação às bordas da cartela. --ar [PROPORCAO] --no qr code, no qrcode, no barcode, no smartphone, no phone, no mobile device, no 3d mockup, no box`,
 
 		p6Text: `Render 3D de estúdio fotorealista de embalagem de estojo duplo em polímero plástico transparente articulado, em pé e aberto sobre mesa de madeira limpa. A metade da FRENTE (à esquerda) possui o topo retangular liso sem cabideiro e exibe 100% da arte da segunda imagem anexada (SMARTPHONE + PELÍCULA FLUTUANTE SOBRE A TELA). APENAS a metade do VERSO (à direita) possui o cabideiro de polímero estendido no topo com furo Euro Slot e exibe 100% da arte da terceira imagem anexada (APENAS PELÍCULA ISOLADA SEM CELULAR AO LADO DOS 5 BENEFÍCIOS). Cada metade preserva a proporção vertical 209:402. Acabamento em polímero transparente brilhante, iluminação de estúdio commercial 8k. --ar 1:1 --no double hangers, no hanger on left side, no cardboard, no paper box`
 	};
@@ -1197,10 +1197,34 @@ Para cada benefício, sugira o ícone minimalista ideal.`
 		const beneficiosEl = document.getElementById('inputBeneficios');
 		const beneficios = beneficiosEl ? (beneficiosEl.value.trim() || '1. ULTRAFINA E RESISTENTE • 2. 5X MAIS RESISTENTE • 3. ALTA DEFINIÇÃO • 4. TOQUE SUAVE • 5. FÁCIL INSTALAÇÃO') : '1. ULTRAFINA E RESISTENTE • 2. 5X MAIS RESISTENTE • 3. ALTA DEFINIÇÃO • 4. TOQUE SUAVE • 5. FÁCIL INSTALAÇÃO';
 
-		const insta = (document.getElementById('inputInstagram') ? document.getElementById('inputInstagram').value.trim() : '@cason.oficial') || '@cason.oficial';
-		const face = (document.getElementById('inputFacebook') ? document.getElementById('inputFacebook').value.trim() : 'fb.com/cason.oficial') || 'fb.com/cason.oficial';
-		const twit = (document.getElementById('inputTwitter') ? document.getElementById('inputTwitter').value.trim() : '@cason_oficial') || '@cason_oficial';
-		const web = (document.getElementById('inputWebsite') ? document.getElementById('inputWebsite').value.trim() : 'www.cason.com.br') || 'www.cason.com.br';
+		const instaEl = document.getElementById('inputInstagram');
+		const faceEl = document.getElementById('inputFacebook');
+		const twitEl = document.getElementById('inputTwitter');
+		const webEl = document.getElementById('inputWebsite');
+
+		const insta = instaEl ? instaEl.value.trim() : '';
+		const face = faceEl ? faceEl.value.trim() : '';
+		const twit = twitEl ? twitEl.value.trim() : '';
+		const web = webEl ? webEl.value.trim() : '';
+
+		let redesList = [];
+		if (insta) redesList.push(`Instagram (${insta})`);
+		if (face) redesList.push(`Facebook (${face})`);
+		if (twit) redesList.push(`Twitter/X (${twit})`);
+		if (web) redesList.push(`Website (${web})`);
+
+		let rodapeRedes = '';
+		if (redesList.length > 0) {
+			let listText = '';
+			if (redesList.length === 1) {
+				listText = redesList[0];
+			} else {
+				listText = redesList.slice(0, -1).join(', ') + ' e ' + redesList[redesList.length - 1];
+			}
+			rodapeRedes = `No rodapé inferior do verso, exiba uma faixa limpa com a chamada 'SIGA NOSSAS REDES:' acompanhada dos ícones vetorizados oficiais de redes sociais e site com seus endereços: ${listText}.`;
+		} else {
+			rodapeRedes = `No rodapé inferior do verso, mantenha uma faixa limpa e generosa sem ícones de redes sociais.`;
+		}
 
 		const map = {
 			p1: db.p1Text,
@@ -1221,9 +1245,7 @@ Para cada benefício, sugira o ícone minimalista ideal.`
 				let updatedText = map[key]
 					.replace(/\[SUBTITULO\]/g, subtitulo)
 					.replace(/\[BENEFICIOS\]/g, beneficios)
-							.replace(/\[INSTAGRAM\]/g, insta)
-					.replace(/\[FACEBOOK\]/g, face)
-					.replace(/\[TWITTER\]/g, twit)
+					.replace(/\[RODAPE_REDES\]/g, rodapeRedes)
 					.replace(/\[PROPORCAO\]/g, proporcao);
 				el.textContent = updatedText;
 			}

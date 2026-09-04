@@ -1,19 +1,24 @@
 const fs = require('fs');
-const vm = require('vm');
+const path = require('path');
 
-const html = fs.readFileSync('c:/Users/bruno/.gemini/antigravity-ide/scratch/workana_packaging_ai/apresentacao_frame.html', 'utf8');
-const scriptMatch = html.match(/<script>([\s\S]*?)<\/script>/);
-
-if (!scriptMatch) {
-    console.error('Script tag not found!');
-    process.exit(1);
+function checkFile(filename) {
+    const filePath = path.join(__dirname, filename);
+    const content = fs.readFileSync(filePath, 'utf8');
+    const scriptMatches = content.match(/<script>([\s\S]*?)<\/script>/gi);
+    if (!scriptMatches) {
+        console.log(`No <script> tags found in ${filename}`);
+        return;
+    }
+    scriptMatches.forEach((scriptTag, idx) => {
+        const jsCode = scriptTag.replace(/^<script>/i, '').replace(/<\/script>$/i, '');
+        try {
+            new Function(jsCode);
+            console.log(`Script #${idx + 1} in ${filename} is VALID!`);
+        } catch (e) {
+            console.error(`Script #${idx + 1} in ${filename} HAS SYNTAX ERROR:`, e.message);
+        }
+    });
 }
 
-try {
-    // Check syntax by compiling the script in a sandbox
-    new vm.Script(scriptMatch[1]);
-    console.log('JavaScript syntax in apresentacao_frame.html is 100% VALID!');
-} catch (err) {
-    console.error('JS Syntax Error:', err);
-    process.exit(1);
-}
+checkFile('apresentacao_frame.html');
+checkFile('apresentacao_board.html');

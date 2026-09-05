@@ -84,7 +84,15 @@ Padronização rígida de proporção: Pegue exclusivamente a cartela escolhida 
 *Anexe na ordem: **(1) A Faca Mestre/Gabarito em branco** + **(2) A Arte Aprovada pelo cliente**, e cole:*
 
 ```text
-Máscara de camada gráfica 2D direta universal: Utilize a primeira imagem anexada (Faca Mestre) estritamente como uma camada de máscara transparente de corte. Projete 100% do design gráfico da segunda imagem anexada por dentro da silhueta deste molde sem adicionar, remover ou alterar NENHUM elemento. Os três furos circulares e o recorte do topo da primeira imagem funcionam como aberturas vazadas transparentes de faca. Não mude de posição nenhum elemento gráfico ou artístico (incluindo textos, logos, fundos, fotos de celular e lentes), a faca pode perfurar e cortar diretamente por cima de qualquer elemento exatamente onde ele está. Imagem 2D plana contínua perfeitamente alinhada. --ar 47:75 --no box, no 3d mockup, no altered geometry, no floating circles
+Máscara de camada gráfica 2D direta universal: Utilize a primeira imagem anexada (Faca 3 Furos) estritamente como uma camada de máscara transparente de corte em sistema de coordenadas normalizado 47:75 (canvas 993x1584 px). Projete 100% do design gráfico da segunda imagem anexada por dentro da silhueta deste molde sem adicionar, remover ou alterar NENHUM elemento. Os três furos circulares e o recorte do topo funcionam como aberturas de perfuração vazada de máscara alfa (100% transparentes, sem preenchimento branco ou círculos pintados).
+
+MAPEAMENTO RÍGIDO DE COORDENADAS E SEPARAÇÃO PROPORCIONAL (3 FUROS - CARTELA 47 x 75 mm):
+• Furo Esquerdo Superior: Centro X = 29,1% (13,7 mm | ~290 px) | Centro Y = 57,1% (42,8 mm | ~904 px) | Diâmetro = 39,8% da largura da cartela (Ø 18,7 mm | ~395 px).
+• Furo Esquerdo Inferior: Centro X = 29,1% (13,7 mm | ~290 px) | Centro Y = 84,9% (63,7 mm | ~1345 px) | Diâmetro = 39,8% da largura da cartela (Ø 18,7 mm | ~395 px), no mesmo eixo X com o furo superior e margem de ~1,95 mm da base.
+• Furo Direito: Centro X = 73,2% (34,4 mm | ~727 px) | Centro Y = 71,1% (53,3 mm | ~1126 px) | Diâmetro = 39,8% da largura da cartela (Ø 18,7 mm | ~395 px), posicionado verticalmente no ponto médio entre os dois furos esquerdos e a ~3,25 mm da borda direita.
+• Vão e Separação Proporcional: Separação vertical limpa de aproximadamente 2,2 mm (~46 px) entre as bordas dos furos esquerdos e de aproximadamente 4,5 mm (~95 px) para o furo da direita, garantindo que os 3 furos fiquem independentes entre si (sem encostar ou fundir), replicando com precisão o gabarito CAD de linha vermelha.
+
+O bloco do logo da marca e subtítulo '{{SUBTITULO}}' fica posicionado no terço superior. Não reinterpretar, centralizar ou redistribuir os furos. Aplicar como máscara alfa com recorte transparente real. Imagem 2D plana contínua perfeitamente alinhada. --ar 47:75 --no white circles, no solid white shapes, no painted circles, no drawn holes, no white fills, no touching circles, no merged cutouts, no border overflow, no edge collision, no box, no 3d mockup, no altered geometry, no floating circles
 ```
 
 #### 🇺🇸 Versão em Inglês:

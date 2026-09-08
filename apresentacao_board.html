@@ -163,13 +163,20 @@
   border: 1px solid var(--border-color);
   color: #0f172a;
   font-weight: 600;
-  padding: 6px 12px;
+  padding: 8px 12px;
   border-radius: var(--radius-sm);
   font-size: 0.85rem;
   outline: none;
   transition: var(--transition);
-  min-width: 260px;
-  }
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.top-var-bar .var-input {
+  min-width: 240px;
+  width: auto;
+}
 
   .var-input:focus {
   border-color: var(--accent-cyan);
@@ -182,7 +189,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  padding: 2rem;
+  padding: 2rem 2rem 140px 2rem;
   max-width: 1400px;
   margin: 0 auto;
   width: 100%;
@@ -281,9 +288,18 @@
   /* GRID LAYOUT FOR PROMPTS & PREVIEWS */
   .content-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 2rem;
-  }
+  align-items: start;
+}
+
+.content-grid > div {
+  min-width: 0;
+}
+
+.content-grid > div > .notes-box:first-child {
+  margin-top: 0;
+}
 
   @media (max-width: 1024px) {
   .content-grid {
@@ -970,7 +986,6 @@ Para cada nome apresente estritamente o formato: NOME - SUBTÍTULO sugerido.</di
 					<h1 class="slide-title">Arte 2D do Verso & Benefícios (209 × 402 mm)</h1>
 					<p class="slide-subtitle">Criação da arte gráfica traseira com lista de benefícios e ícones vetorizados</p>
 				</div>
-				
 			</div>
 
 			<div class="content-grid">
@@ -996,12 +1011,37 @@ Para cada nome apresente estritamente o formato: NOME - SUBTÍTULO sugerido.</di
 						<input type="text" id="inputBeneficios" class="var-input" style="width: 100%; font-size: 0.9rem; padding: 10px 14px;" value="1. ULTRAFINA E RESISTENTE • 2. 5X MAIS RESISTENTE • 3. ALTA DEFINIÇÃO • 4. TOQUE SUAVE • 5. FÁCIL INSTALAÇÃO" oninput="updatePrompts()" placeholder="Ex: 1. ULTRAFINA • 2. ALTA DEFINIÇÃO • 3. TOQUE SUAVE">
 					</div>
 
-					<!-- CAIXA DE ENTRADA DAS REDES SOCIAIS E SITE NO VERSO -->
-					<div class="prompt-card" style="margin-top: 1.25rem; background: rgba(124, 58, 237, 0.04); border-color: rgba(124, 58, 237, 0.25);">
+					<!-- PROMPT 4B: ARTE 2D VERSO -->
+					<div class="prompt-card" style="margin-top: 1.25rem;">
+						<div class="prompt-card-header">
+							<span class="prompt-label" style="color: var(--accent-purple);">Prompt 4B: Arte 2D do Verso (Com Benefícios & Ícones)</span>
+							<button class="copy-btn" style="background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));" onclick="copyPrompt('p4b')">
+								<svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+								Copiar Verso 2D
+							</button>
+						</div>
+						<div class="prompt-text" id="p4b">...</div>
+						<button class="read-more-btn" onclick="toggleReadMore('p4b', this)">Ler mais <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
+					</div>
+				</div>
+
+				<div>
+					<!-- INSTRUÇÕES DE PRÉ-IMPRESSÃO DO VERSO (100% VISÍVEL E ESPAÇOSA) -->
+					<div class="notes-box" style="margin-top: 0; margin-bottom: 1.25rem;">
+						<div class="notes-header">Instruções de Pré-Impressão do Verso</div>
+						<ul class="notes-list">
+							<li><strong>Criação do Verso (Prompt 4B)</strong>: Anexe a Arte 2D da Frente aprovada no Slide 4 e cole os benefícios digitados ao lado. O prompt adiciona os ícones técnicos no lado direito e a película transparente flutuando no lado esquerdo.</li>
+							<li><strong>Flexibilidade de Tópicos</strong>: Você pode utilizar de 1 até no máximo 5 benefícios de acordo com o pedido do cliente.</li>
+							<li><strong>Redes Sociais Oficiais</strong>: Preencha os canais abaixo para que sejam incluídos na faixa inferior do verso da cartela.</li>
+						</ul>
+					</div>
+
+					<!-- CAIXA DE ENTRADA DAS REDES SOCIAIS E SITE NO VERSO (GRADE 2X2 ESPAÇOSA) -->
+					<div class="prompt-card" style="background: rgba(124, 58, 237, 0.04); border-color: rgba(124, 58, 237, 0.25);">
 						<div class="prompt-card-header" style="margin-bottom: 0.5rem;">
 							<span class="prompt-label" style="color: var(--accent-purple);">Redes Sociais & Site no Verso (Rodapé):</span>
 						</div>
-						<div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 0.75rem;">
+						<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
 							<div>
 								<label style="font-size: 0.75rem; font-weight: 700; color: #475569; display: block; margin-bottom: 4px;">Instagram:</label>
 								<input type="text" id="inputInstagram" class="var-input" style="width: 100%; font-size: 0.85rem; padding: 8px 12px;" value="@cason.oficial" oninput="updatePrompts()">
@@ -1020,34 +1060,10 @@ Para cada nome apresente estritamente o formato: NOME - SUBTÍTULO sugerido.</di
 							</div>
 						</div>
 					</div>
-
-					<!-- PROMPT 4B: ARTE 2D VERSO -->
-					<div class="prompt-card" style="margin-top: 1.25rem;">
-						<div class="prompt-card-header">
-							<span class="prompt-label" style="color: var(--accent-purple);">Prompt 4B: Arte 2D do Verso (Com Benefícios & Ícones)</span>
-							<button class="copy-btn" style="background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));" onclick="copyPrompt('p4b')">
-								<svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
-								Copiar Verso 2D
-							</button>
-						</div>
-						<div class="prompt-text" id="p4b">...</div>
-						<button class="read-more-btn" onclick="toggleReadMore('p4b', this)">Ler mais <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
-					</div>
-				</div>
-
-				<div>
-					<div class="notes-box">
-						<div class="notes-header">Instruções de Pré-Impressão do Verso</div>
-						<ul class="notes-list">
-							<li><strong>Criação do Verso (Prompt 4B)</strong>: Anexe a Arte 2D da Frente aprovada no Slide 4 e cole os benefícios digitados acima. O prompt adiciona os ícones técnicos no lado direito e a película transparente flutuando no lado esquerdo.</li>
-							<li><strong>Flexibilidade de Tópicos</strong>: Você pode utilizar de 1 até no máximo 5 benefícios de acordo com o pedido do cliente.</li>
-						</ul>
-					</div>
 				</div>
 			</div>
 		</div>
 
-		<!-- SLIDE 6 -->
 		<div class="slide-card" id="slide-6">
 			<div class="slide-header">
 				<div>

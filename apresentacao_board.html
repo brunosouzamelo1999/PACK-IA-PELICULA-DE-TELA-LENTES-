@@ -786,6 +786,20 @@ Para cada nome apresente estritamente o formato: NOME - SUBTÍTULO sugerido.</di
  <div class="prompt-text" id="p1">...</div>
 						<button class="read-more-btn" onclick="toggleReadMore('p1', this)">Ler mais <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
  </div>
+
+					<!-- PROMPT 1B: ARTE PLANA 2D LIMPA -->
+					<div class="prompt-card" style="margin-top: 1.25rem;">
+						<div class="prompt-card-header">
+							<span class="prompt-label" style="color: var(--accent-cyan);">Arte Plana 2D Limpa</span>
+							<button class="copy-btn" onclick="copyPrompt('p1Limpa')">
+								<svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+								Copiar Arte Limpa
+							</button>
+						</div>
+
+						<div class="prompt-text" id="p1Limpa">...</div>
+						<button class="read-more-btn" onclick="toggleReadMore('p1Limpa', this)">Ler mais <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
+					</div>
  </div>
 
  <!-- OBSERVAÇÕES -->
@@ -1007,7 +1021,7 @@ Para cada nome apresente estritamente o formato: NOME - SUBTÍTULO sugerido.</di
 
 				<div>
 					<div class="notes-box">
-						<div class="notes-header">Como Gerar o Board no Midjourney / ChatGPT</div>
+						<div class="notes-header">Como Gerar o Board no ChatGPT</div>
 						<ul class="notes-list">
 							<li><strong>Imagem 1 (Anexo 1)</strong>: Suba o gabarito da faca mestre (print com o contorno da faca, orelhas chanfradas e linha interna preta).</li>
 							<li><strong>Imagem 2 (Anexo 2)</strong>: Suba a imagem da arte aprovada (com a cor de fundo, textura e o logotipo/subtítulo).</li>
@@ -1185,6 +1199,17 @@ Para cada nome apresente estritamente o formato: NOME - SUBTÍTULO sugerido.</di
  const db = {
 		p1Text: `Layout gráfico em 2D plano para a face frontal de embalagem retangular de película de tela de celular, imagem retangular 2D estritamente plana, proporção [PROPORCAO]. Reproduza exatamente o estilo visual, cores da marca, fundo, tipografia e logo da imagem de referência anexada. O topo contém o logo do cliente e o subtítulo '[SUBTITULO]'. No centro da composição, exiba a ilustração de um smartphone moderno de perfil frontal em ângulo sutil destacando a pílula da câmera frontal (Dynamic Island) no topo da tela acesa. Reduza a escala do bloco do logo, do subtítulo e da ilustração central do produto em 15% a 20%, garantindo margens de segurança limpas e generosas ao redor das bordas da cartela, mantendo a composição compacta e elegante. Flutuando paralelamente sobre a tela do celular, exiba uma película de vidro temperado 100% transparente com o contorno de borda preta fina ultra-precisa ao redor do perímetro do vidro e cantos arredondados (estilo película de tela inteira Full Screen Black Border / 2.5D Glass Shield). Mantenha a proporção [PROPORCAO], a iluminação limpa e a nitidez da arte original. --ar [PROPORCAO] --no top ears, no notch cutouts, no icons, no badges, no box, no 3d mockup`,
 
+		p1LimpaText: `Layout gráfico em 2D plano minimalista e limpo para embalagem retangular de película de tela de celular, imagem retangular 2D estritamente plana, proporção [PROPORCAO]. Reproduza com fidelidade a cor de fundo, a textura e a identidade visual da imagem de referência anexada.
+
+Exatamente no centro da imagem (perfeitamente centralizado no eixo horizontal e vertical), exiba RIGOROSAMENTE APENAS:
+- O logotipo da marca extraído com precisão da imagem anexada
+- O subtítulo comercial: '[SUBTITULO]' logo abaixo do logo, centralizado
+
+Design minimalista, elegante, desobstruído e vetorial. Fundo 100% limpo e contínuo até as bordas.
+Sem celular, sem smartphone, sem aparelho, sem película de vidro flutuante, sem mãos, sem ícones, sem linhas de corte, sem mockup 3D.
+
+--ar [PROPORCAO] --no smartphone, no phone, no mobile device, no screen protector, no glass, no hands, no icons, no lines, no cutouts, no 3d mockup`,
+
 		pl1Text: `Adaptação multi-estilo Lote 1 em grade 2x2 para Embalagem de Tela Board: Mantenha a proporção [PROPORCAO]. CADA QUADRO DEVE APLICAR UMA HARMONIZAÇÃO TIPOGRÁFICA COMPLETA DE LETTERING, FONTE E ACABAMENTO VISUAL DE FORMA UNIFICADA TANTO PARA O LOGO DA MARCA QUANTO PARA O SUBTÍTULO '[SUBTITULO]' (ex: no estilo cromado, aplique o acabamento 3D cromado unificado no logo E no subtítulo; no estilo vidro/neon, aplique o efeito 3D no logo E no subtítulo). Não deixe o subtítulo em fonte simples genérica descolada do logo. Gere uma grade 2x2 com 4 quadros paralelos onde CADA QUADRO APLICA UM ESTILO ARTÍSTICO E UMA HARMONIZAÇÃO EXCLUSIVA DE LETTERING, WALLPAPER, COR DO CELULAR E PELÍCULA:
 • Quadro 1 (Minimalista Clean): Fundo clean, lettering sans-serif, smartphone Prata com wallpaper minimalista aceso e película HD cristal transparente.
 • Quadro 2 (Bauhaus Geométrico): Fundo bauhaus, lettering geométrico, smartphone Titânio Dourado com wallpaper bauhaus aceso e película transparente chanfrada 2.5D.
@@ -1296,6 +1321,7 @@ Para cada benefício, sugira o ícone minimalista ideal.`
 
 		const map = {
 			p1: db.p1Text,
+			p1Limpa: db.p1LimpaText,
 			pl1: db.pl1Text,
 			pl2: db.pl2Text,
 			p2c: db.p2cText,

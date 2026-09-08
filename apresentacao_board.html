@@ -979,7 +979,7 @@ Para cada nome apresente estritamente o formato: NOME - SUBTÍTULO sugerido.</di
 			</div>
 		</div>
 
-		<!-- SLIDE 5 (NOVO: MOCKUP DO BOARD FÍSICO) -->
+		<!-- SLIDE 5 (MOCKUP DO BOARD FÍSICO) -->
 		<div class="slide-card" id="slide-5">
 			<div class="slide-header">
 				<div>
@@ -991,40 +991,27 @@ Para cada nome apresente estritamente o formato: NOME - SUBTÍTULO sugerido.</di
 
 			<div class="content-grid">
 				<div>
-					<!-- PROMPT 5A: CRIAÇÃO DO BOARD FÍSICO (FACA MESTRE) -->
+					<!-- PROMPT 5: CRIAÇÃO DO BOARD FÍSICO (FACA MESTRE) -->
 					<div class="prompt-card">
 						<div class="prompt-card-header">
-							<span class="prompt-label">Prompt 5A (Principal): Criação do Board Físico (Faca Mestre 209:402)</span>
-							<button class="copy-btn" onclick="copyPrompt('p5a')">
+							<span class="prompt-label">Prompt 5: Criação do Board Físico (Faca Mestre 209:402)</span>
+							<button class="copy-btn" onclick="copyPrompt('p5')">
 								<svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
 								Copiar Board Físico
 							</button>
 						</div>
-						<div class="prompt-text" id="p5a">...</div>
-						<button class="read-more-btn" onclick="toggleReadMore('p5a', this)">Ler mais <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
-					</div>
-
-					<!-- PROMPT 5B: ARTE 2D LIMPA DO BOARD (ETAPA PRÉVIA) -->
-					<div class="prompt-card" style="margin-top: 1.25rem;">
-						<div class="prompt-card-header">
-							<span class="prompt-label">Prompt 5B (Etapa Prévia): Arte 2D Limpa do Board (Sem Celular)</span>
-							<button class="copy-btn" onclick="copyPrompt('p5b')">
-								<svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
-								Copiar Arte 2D Limpa
-							</button>
-						</div>
-						<div class="prompt-text" id="p5b">...</div>
-						<button class="read-more-btn" onclick="toggleReadMore('p5b', this)">Ler mais <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
+						<div class="prompt-text" id="p5">...</div>
+						<button class="read-more-btn" onclick="toggleReadMore('p5', this)">Ler mais <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
 					</div>
 				</div>
 
 				<div>
 					<div class="notes-box">
-						<div class="notes-header">Fluxo de Criação do Board (2 Etapas)</div>
+						<div class="notes-header">Como Gerar o Board no Midjourney / ChatGPT</div>
 						<ul class="notes-list">
-							<li><strong>Etapa 1 (Arte Limpa - Prompt 5B)</strong>: Pega a arte aprovada no Slide 4 e remove o celular e a película, deixando o fundo contínuo com o logotipo e o subtítulo centralizados na folha 2D.</li>
-							<li><strong>Etapa 2 (Board Físico - Prompt 5A)</strong>: Suba no Midjourney/ChatGPT a <strong>Imagem 1</strong> (Gabarito da faca mestre com a linha preta) + <strong>Imagem 2</strong> (A arte 2D limpa gerada na Etapa 1) e execute o Prompt 5A para renderizar a cartela recortada em pé em estúdio fotográfico.</li>
-							<li><strong>Fidelidade Estrutural</strong>: A cartela reproduz com precisão as orelhas superiores com chanfros angulados, a linha interna preta do produto e a proporção vertical 209:402.</li>
+							<li><strong>Imagem 1 (Anexo 1)</strong>: Suba o gabarito da faca mestre (print com o contorno da faca, orelhas chanfradas e linha interna preta).</li>
+							<li><strong>Imagem 2 (Anexo 2)</strong>: Suba a imagem da arte aprovada (com a cor de fundo, textura e o logotipo/subtítulo).</li>
+							<li><strong>Render Final</strong>: Executa a foto de estúdio comercial com a cartela física recortada em pé, com os chanfros superiores, cantos arredondados, linha preta interna e a proporção vertical 209:402.</li>
 						</ul>
 					</div>
 				</div>
@@ -1232,12 +1219,17 @@ No centro de cada quadro, exiba a ilustração do smartphone moderno destacando 
 
 		p4Text: `Padronização rígida de proporção: Pegue exclusivamente a cartela escolhida da imagem anexada e renderize-a isolada como uma arte 2D plana contínua preenchendo 100% da tela na proporção física exata '[PROPORCAO]'. Re-enquadre e preserve integralmente TODOS os elementos gráficos da imagem anexada: mantenha perfeitamente o logo da marca, subtítulo '[SUBTITULO]' no terço superior e a ilustração central do produto. Reduza a escala do logo, do subtítulo e da ilustração do produto em 15% a 20%, mantendo margens de segurança limpas em relação às bordas da cartela. --ar [PROPORCAO] --no die-cut lines, no knife lines, no cutouts, no red contour lines, no holes, no 3d mockup, no shadows`,
 
-		p5aText: `Fotografia comercial de estúdio em vista frontal de uma cartela física de embalagem recortada (packaging die-cut board card), proporção vertical 209:402, apoiada em pé no centro de uma mesa de estúdio limpa. A cartela física segue estritamente a silhueta de corte externa da Imagem 1: formato vertical 209:402 com os quatro cantos arredondados e os dois chanfros superiores angulados formando as orelhas e o topo reto central. Na face frontal da cartela, exibe com precisão a linha interna preta contínua da Imagem 1: traço preto fino e nítido impresso na cartela demarcando a área do produto. A superfície inteira da cartela reproduz 100% da arte da Imagem 2: a mesma cor de fundo e textura, com o logotipo e o subtítulo '[SUBTITULO]' rigorosamente mantidos e centralizados no meio da cartela. Cenário: fundo minimalista de estúdio cinza claro com iluminação difusa suave e leve reflexo/sombra natural na base. Cartela em papel cartão rígido premium com acabamento acetinado. Sem celular, sem aparelho, sem película de vidro flutuante, sem mãos. --ar 209:402 --no smartphone, no phone, no mobile device, no floating screen protector, no glass, no hands, no plastic case, no box`,
+		p5Text: `Fotografia comercial de estúdio em vista frontal de uma cartela física de embalagem recortada (packaging die-cut board card), proporção vertical 209:402, apoiada em pé no centro de uma mesa de estúdio limpa.
 
-		p5bText: `Preserve apenas a cor de fundo, textura e identidade visual da imagem anexada. Remova completamente o smartphone e remova a película. Deixe na imagem RIGOROSAMENTE APENAS o fundo limpo e, centralizados no meio:
-- O logotipo da marca
-- O subtítulo comercial: '[SUBTITULO]' logo abaixo do logo
---ar 209:402 --no smartphone, no phone, no screen protector, no glass, no icons, no 3d mockup`,
+A cartela física segue estritamente a silhueta de corte externa da Imagem 1: formato vertical 209:402 com os quatro cantos arredondados e os dois chanfros superiores angulados formando as orelhas e o topo reto central.
+
+Na face frontal da cartela, exibe com precisão a linha interna preta contínua da Imagem 1: traço preto fino e nítido impresso na cartela demarcando a área do produto.
+
+A superfície inteira da cartela reproduz 100% da arte da Imagem 2: a mesma cor de fundo e textura, com o logotipo e o subtítulo '[SUBTITULO]' rigorosamente mantidos e centralizados no meio da cartela.
+
+Cenário: fundo minimalista de estúdio cinza claro com iluminação difusa suave e leve reflexo/sombra natural na base. Cartela em papel cartão rígido premium com acabamento acetinado. Sem celular, sem aparelho, sem película de vidro flutuante, sem mãos.
+
+--ar 209:402 --no smartphone, no phone, no mobile device, no floating screen protector, no glass, no hands, no plastic case, no box`,
 
 		p4bText: `Layout gráfico em 2D plano para a face traseira (verso) de embalagem retangular de película de tela, proporção [PROPORCAO]. Mantenha 100% da identidade visual, cores, textura de fundo e o logo da marca '[SUBTITULO]' no topo da imagem de referência anexada. Na metade esquerda, exiba APENAS a ilustração de uma película de vidro temperado 100% transparente com borda preta fina flutuando isolada (SEM CELULAR / SEM SMARTPHONE). Na metade direita, exiba uma lista vertical limpa com os ícones técnicos minimalistas em vetor alinhados com seus respectivos textos de benefícios: '[BENEFICIOS]'. [RODAPE_REDES] Reduza a escala de todos os elementos em 15% a 20%, mantendo margens de segurança limpas e generosas em relação às bordas da cartela. --ar [PROPORCAO] --no qr code, no qrcode, no barcode, no smartphone, no phone, no mobile device, no 3d mockup, no box`,
 
@@ -1311,8 +1303,7 @@ Para cada benefício, sugira o ícone minimalista ideal.`
 			pl4: db.pl4Text,
 			p3c: db.p3cText,
 			p4: db.p4Text,
-			p5a: db.p5aText,
-			p5b: db.p5bText,
+			p5: db.p5Text,
 			p4b: db.p4bText,
 			p6: db.p6Text
 		};

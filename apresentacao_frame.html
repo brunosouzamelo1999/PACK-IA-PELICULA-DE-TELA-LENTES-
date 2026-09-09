@@ -734,11 +734,13 @@
         </div>
         <div class="header-center-menu">
             <select class="slide-number-dropdown" id="headerSlideDropdown" onchange="goToSlide(parseInt(this.value))">
-                <option value="1">Slide 1 de 5 • Arte 2D FRENTE & Naming</option>
-                <option value="2">Slide 2 de 5 • Mostruário (Lotes 1 & 2)</option>
-                <option value="3">Slide 3 de 5 • Mostruário (Lotes 3 & 4)</option>
-                <option value="4">Slide 4 de 5 • Padronização 2D</option>
-                <option value="5">Slide 5 de 5 • Mockup Faca</option>
+                <option value="1">Slide 1 de 7 • Arte 2D FRENTE & Naming</option>
+                <option value="2">Slide 2 de 7 • Mostruário (Lotes 1 & 2)</option>
+                <option value="3">Slide 3 de 7 • Mostruário (Lotes 3 & 4)</option>
+                <option value="4">Slide 4 de 7 • Padronização 2D Frente</option>
+                <option value="5">Slide 5 de 7 • Mockup 2D Faca 3 Furos</option>
+                <option value="6">Slide 6 de 7 • Arte 2D Verso & Benefícios</option>
+                <option value="7">Slide 7 de 7 • Mockup 3D Estojo Transparente</option>
             </select>
         </div>
         <div class="header-controls">
@@ -1060,7 +1062,6 @@ Para cada nome apresente estritamente o formato: NOME - SUBTÍTULO sugerido.</di
                         </div>
                         <img id="slide5DieImage" src="data:image/png;base64,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" style="max-width: 100%; max-height: 280px; height: auto; border-radius: 8px; object-fit: contain;" />
                     </div>
-</div>
                 </div>
             </div>
         </div>
@@ -1201,11 +1202,52 @@ Para cada nome apresente estritamente o formato: NOME - SUBTÍTULO sugerido.</di
                 </div>
             </div>
         </div>
-        <!-- SLIDE 6 (MOCKUP 3D ESTOJO TRANSPARENTE - EXCLUSIVO FRAME SLIM) -->
+        
+        <!-- SLIDE 6 (ARTE 2D VERSO ESSENCIAL - EXCLUSIVO FRAME SLIM) -->
         <div class="slide-card" id="slide-6-slim" style="display: none;">
             <div class="slide-header">
                 <div>
-                    <div class="slide-tag">PASSO F6 • MOCKUP 3D ESTOJO TRANSPARENTE (FRAME SLIM)</div>
+                    <div class="slide-tag">PASSO F6 • ARTE 2D VERSO ESSENCIAL (FRAME SLIM)</div>
+                    <h1 class="slide-title">Arte 2D do Verso Essencial (Sem Logo)</h1>
+                    <p class="slide-subtitle">Criação da arte gráfica traseira essencial, contínua e sem logo, derivada diretamente da arte da frente</p>
+                </div>
+            </div>
+
+            <div class="content-grid">
+                <div>
+                    <!-- PROMPT 4B SLIM: ARTE 2D VERSO ESSENCIAL -->
+                    <div class="prompt-card">
+                        <div class="prompt-card-header">
+                            <span class="prompt-label" style="color: var(--accent-purple);">Prompt: Arte 2D do Verso Essencial (Harmonizado com a Frente)</span>
+                            <button class="copy-btn" style="background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue)); color: #fff;" onclick="copyPrompt('p4b-slim')">
+                                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+                                Copiar Verso 2D Slim
+                            </button>
+                        </div>
+                        <div class="prompt-text" id="p4b-slim">Layout gráfico em 2D plano para a face traseira (verso) de cartela de protetor de lente de câmera da Folha de Impressão (Linha Frame Slim), proporção vertical física 318:351. Estilo visual limpo, minimalista e contínuo inspirado na imagem de referência frontal anexada: reproduza 100% da identidade visual, paleta de cores, gradientes sofisticados, iluminação e texturas abstratas da arte frontal, criando uma harmonia perfeita entre frente e verso. ARTE 100% LIMPA E ESSENCIAL: SEM NENHUM LOGOTIPO, SEM SUBTÍTULO, SEM TEXTOS DA MARCA, SEM ÍCONES DE REDES SOCIAIS E SEM CABEÇALHOS. Composição pura e equilibrada da arte de fundo, preenchendo integralmente a cartela com margens de respiro seguras. Sem molduras perimetrais, sem furos vazados, sem círculos brancos pintados e sem ilustrações de smartphone. Imagem 2D plana contínua de alta definição 8k. --ar 318:351 --no logo, no brand logo, no text, no words, no letters, no subtitle, no smartphone, no phone, no camera lens, no white circles, no drawn holes, no cutouts, no 3d mockup, no box, no qr code, no barcode, no icons, no badges</div>
+                        <button class="read-more-btn" onclick="toggleReadMore('p4b-slim', this)">Ler mais <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
+                    </div>
+                </div>
+
+                <div>
+                    <!-- INSTRUÇÕES DO VERSO ESSENCIAL SLIM -->
+                    <div class="notes-box" style="margin-top: 0; margin-bottom: 1.25rem;">
+                        <div class="notes-header">Conceito do Verso Essencial Slim</div>
+                        <ul class="notes-list">
+                            <li><strong>Derivado da Frente</strong>: Anexe a imagem da Arte 2D da Frente (gerada no Slide 4). O prompt utiliza as mesmas cores, texturas e identidade de fundo para criar um verso contínuo e harmonioso.</li>
+                            <li><strong>100% Limpo e Sem Logo</strong>: Não possui logotipo da marca, subtítulo ou textos grandes. O verso foca puramente no design artístico essencial e sofisticado.</li>
+                            <li><strong>Proporção Calibrada (318:351)</strong>: Mantém rigorosamente a proporção da cartela da Folha de Impressão da Linha Frame Slim.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 7 (MOCKUP 3D ESTOJO TRANSPARENTE - EXCLUSIVO FRAME SLIM) -->
+        <div class="slide-card" id="slide-7-slim" style="display: none;">
+            <div class="slide-header">
+                <div>
+                    <div class="slide-tag">PASSO F7 • MOCKUP 3D ESTOJO TRANSPARENTE (FRAME SLIM)</div>
                     <h1 class="slide-title">Mockup 3D Estojo Transparente (Frente + Verso)</h1>
                     <p class="slide-subtitle">Renderização 3D fotorealista do estojo blister transparente para a Linha Frame Slim (Frente + Verso)</p>
                 </div>
@@ -1221,7 +1263,7 @@ Para cada nome apresente estritamente o formato: NOME - SUBTÍTULO sugerido.</di
                                 Copiar Render 3D Estojo
                             </button>
                         </div>
-                        <div class="prompt-text" id="p7-slim">Render 3D de estúdio fotorealista de embalagem de estojo duplo em polímero plástico transparente rígido articulado para protetor de lente de câmera de smartphone (Linha Frame Slim), em pé sobre mesa de madeira limpa de estúdio. Apresentação em ângulo comercial duplo exibindo lado a lado as duas metades da embalagem física aberta da primeira imagem anexada: a metade da FRENTE (à esquerda) possui o topo retangular liso e limpo (SEM CABIDEIRO NO LADO DA FRENTE / SEM EURO SLOT À ESQUERDA) e exibe 100% do design gráfico da segunda imagem anexada (arte da cartela frontal). APENAS a metade do VERSO (à direita) possui o cabideiro de polímero estendido no topo com furo Euro Slot e exibe 100% da arte técnica da terceira imagem anexada (com os benefícios técnicos e especificações). Cada metade interna preserva estritamente a proporção vertical do estojo físico. Não incluir furos vazados na embalagem plástica externa. Acabamento em polímero plástico transparente brilhante, iluminação suave de estúdio comercial 8k. --ar 1:1 --no double hangers, no hanger on left side, no hanger on front package, no cardboard, no paper box, no holes on blister, no cutouts</div>
+                        <div class="prompt-text" id="p7-slim">Render 3D de estúdio fotorealista de embalagem de estojo duplo em polímero plástico transparente rígido articulado para protetor de lente de câmera de smartphone (Linha Frame Slim), em pé sobre mesa de madeira limpa de estúdio. Apresentação em ângulo comercial duplo exibindo lado a lado as duas metades da embalagem física aberta da primeira imagem anexada: a metade da FRENTE (à esquerda) possui o topo retangular liso e limpo (SEM CABIDEIRO NO LADO DA FRENTE / SEM EURO SLOT À ESQUERDA) e exibe 100% do design gráfico da segunda imagem anexada (arte da cartela frontal do Slide 4). APENAS a metade do VERSO (à direita) possui o cabideiro de polímero estendido no topo com furo Euro Slot e exibe 100% da arte do verso essencial da terceira imagem anexada (gerada no Slide 6). Cada metade interna preserva estritamente a proporção vertical do estojo físico. Não incluir furos vazados na embalagem plástica externa. Acabamento em polímero plástico transparente brilhante, iluminação suave de estúdio comercial 8k. --ar 1:1 --no double hangers, no hanger on left side, no hanger on front package, no cardboard, no paper box, no holes on blister, no cutouts</div>
                         <button class="read-more-btn" onclick="toggleReadMore('p7-slim', this)">Ler mais <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
                     </div>
                 </div>
@@ -1230,7 +1272,7 @@ Para cada nome apresente estritamente o formato: NOME - SUBTÍTULO sugerido.</di
                     <div class="notes-box">
                         <div class="notes-header">Apresentação Comercial Final (Linha Frame Slim)</div>
                         <ul class="notes-list">
-                            <li><strong>Envio de 3 Arquivos (Ordem Obrigatória)</strong>: Anexe 1º a Foto Física de Referência do Estojo (exibida abaixo), 2º a Arte 2D da Frente (gerada no Slide 4) e 3º a Arte com a Faca de Corte escolhida (gerada no Slide 5).</li>
+                            <li><strong>Envio de 3 Arquivos (Ordem Obrigatória)</strong>: Anexe 1º a Foto Física de Referência do Estojo (exibida abaixo), 2º a Arte 2D da Frente (gerada no Slide 4) e 3º a Arte do Verso Essencial (gerada no Slide 6).</li>
                             <li><strong>Mesmo Estojo da Linha Ultimate</strong>: A linha Slim utiliza exatamente a mesma embalagem blister de polímero transparente rígido articulado.</li>
                             <li><strong>Cabideiro Euro Slot Exclusivo no Verso</strong>: APENAS a metade da direita (Verso) possui o cabideiro Euro Slot estendido no topo. A metade da esquerda (Frente) possui o topo retangular liso e limpo, sem cabideiro.</li>
                         </ul>
@@ -1433,7 +1475,8 @@ A arte gráfica é totalmente recortada e apagada por dentro do perímetro circu
                     3: `Máscara de camada gráfica 2D direta (Frame Slim - Faca Corte Modelo 3): Utilize a primeira imagem anexada (Gabarito Faca Corte 3) estritamente como uma camada de máscara transparente de corte. Projete 100% do design gráfico da segunda imagem anexada por dentro da silhueta deste folha de impressão (318:351) sem alterar nenhum elemento. Os DOIS FUROS CIRCULARES EM ÂNGULO DIAGONAL da primeira imagem funcionam como aberturas de perfuração vazada de faca. REMOÇÃO ATIVA DE ARTE (EFEITO REMOVE BACKGROUND): A arte gráfica é totalmente recortada e apagada dentro da área dos furos (transparência vazada sem círculos brancos pintados). O logotipo da marca e o subtítulo '[SUBTITULO]' devem permanecer preservados no canto superior direito, fora da área de corte dos furos circulares. Imagem 2D plana contínua perfeitamente alinhada. --ar 318:351 --no white circles, no solid white shapes, no painted circles, no drawn holes, no white fills, no box, no 3d mockup, no altered geometry`,
                     4: `Máscara de camada gráfica 2D direta (Frame Slim - Faca Corte Modelo 4): Utilize a primeira imagem anexada (Gabarito Faca Corte 4) estritamente como uma camada de máscara transparente de corte. Projete 100% do design gráfico da segunda imagem anexada por dentro da silhueta deste folha de impressão (318:351) sem alterar nenhum elemento. Os TRÊS FUROS CIRCULARES EM ARRANJO TRIANGULAR DA CÂMERA (PIRÂMIDE) da primeira imagem funcionam como aberturas de perfuração vazada de faca. ALINHAMENTO VERTICAL ELEVADO DO FURO DA DIREITA: O centro do furo da direita deve SUBIR para a metade da altura exata entre o furo superior esquerdo e o furo inferior esquerdo, estando totalmente COLADO e tangente aos dois furos da esquerda (vão zero) sem descair. REMOÇÃO ATIVA DE ARTE (EFEITO REMOVE BACKGROUND): A arte gráfica é totalmente recortada e apagada dentro da área dos furos (transparência vazada sem círculos brancos pintados). Se o subtítulo '[SUBTITULO]' estiver próximo dos furos superiores, posicione o subtítulo no espaço limpo da parte inferior da cartela. Não mude de posição nenhum outro elemento gráfico. Imagem 2D plana contínua perfeitamente alinhada. --ar 318:351 --no white circles, no solid white shapes, no painted circles, no drawn holes, no white fills, no box, no 3d mockup, no altered geometry`
                 },
-                p7Text: `Render 3D de estúdio fotorealista de embalagem de estojo duplo em polímero plástico transparente rígido articulado para protetor de lente de câmera de smartphone (Linha Frame Slim), em pé sobre mesa de madeira limpa de estúdio. Apresentação em ângulo comercial duplo exibindo lado a lado as duas metades da embalagem física aberta da primeira imagem anexada: a metade da FRENTE (à esquerda) possui o topo retangular liso e limpo (SEM CABIDEIRO NO LADO DA FRENTE / SEM EURO SLOT À ESQUERDA) e exibe 100% do design gráfico da segunda imagem anexada (arte da cartela frontal). APENAS a metade do VERSO (à direita) possui o cabideiro de polímero estendido no topo com furo Euro Slot e exibe 100% da arte técnica da terceira imagem anexada (com os benefícios técnicos e especificações). Cada metade interna preserva estritamente a proporção vertical do estojo físico. Não incluir furos vazados na embalagem plástica externa. Acabamento em polímero plástico transparente brilhante, iluminação suave de estúdio comercial 8k. --ar 1:1 --no double hangers, no hanger on left side, no hanger on front package, no cardboard, no paper box, no holes on blister, no cutouts`
+                p4bText: `Layout gráfico em 2D plano para a face traseira (verso) de cartela de protetor de lente de câmera da Folha de Impressão (Linha Frame Slim), proporção vertical física 318:351. Estilo visual limpo, minimalista e contínuo inspirado na imagem de referência frontal anexada: reproduza 100% da identidade visual, paleta de cores, gradientes sofisticados, iluminação e texturas abstratas da arte frontal, criando uma harmonia perfeita entre frente e verso. ARTE 100% LIMPA E ESSENCIAL: SEM NENHUM LOGOTIPO, SEM SUBTÍTULO, SEM TEXTOS DA MARCA, SEM ÍCONES DE REDES SOCIAIS E SEM CABEÇALHOS. Composição pura e equilibrada da arte de fundo, preenchendo integralmente a cartela com margens de respiro seguras. Sem molduras perimetrais, sem furos vazados, sem círculos brancos pintados e sem ilustrações de smartphone. Imagem 2D plana contínua de alta definição 8k. --ar 318:351 --no logo, no brand logo, no text, no words, no letters, no subtitle, no smartphone, no phone, no camera lens, no white circles, no drawn holes, no cutouts, no 3d mockup, no box, no qr code, no barcode, no icons, no badges`,
+                p7Text: `Render 3D de estúdio fotorealista de embalagem de estojo duplo em polímero plástico transparente rígido articulado para protetor de lente de câmera de smartphone (Linha Frame Slim), em pé sobre mesa de madeira limpa de estúdio. Apresentação em ângulo comercial duplo exibindo lado a lado as duas metades da embalagem física aberta da primeira imagem anexada: a metade da FRENTE (à esquerda) possui o topo retangular liso e limpo (SEM CABIDEIRO NO LADO DA FRENTE / SEM EURO SLOT À ESQUERDA) e exibe 100% do design gráfico da segunda imagem anexada (arte da cartela frontal do Slide 4). APENAS a metade do VERSO (à direita) possui o cabideiro de polímero estendido no topo com furo Euro Slot e exibe 100% da arte do verso essencial da terceira imagem anexada (gerada no Slide 6, arte contínua sem logo harmonizada com a frente). Cada metade interna preserva estritamente a proporção vertical do estojo físico. Não incluir furos vazados na embalagem plástica externa. Acabamento em polímero plástico transparente brilhante, iluminação suave de estúdio comercial 8k. --ar 1:1 --no double hangers, no hanger on left side, no hanger on front package, no cardboard, no paper box, no holes on blister, no cutouts`
             }
         };
 
@@ -1451,7 +1494,7 @@ Apresente no formato: 1. BENEFÍCIO • 2. BENEFÍCIO • 3. BENEFÍCIO...`
         // SET FRAME MODE (STANDARD 47:75 vs ULTIMATE 1:1)
         function setFrameMode(mode) {
             currentFrameMode = mode;
-            totalSlides = (mode === 'standard') ? 7 : 6;
+            totalSlides = 7;
 
             document.getElementById('btnModeStandard').classList.toggle('active', mode === 'standard');
             document.getElementById('btnModeUltimate').classList.toggle('active', mode === 'ultimate');
@@ -1479,13 +1522,15 @@ Apresente no formato: 1. BENEFÍCIO • 2. BENEFÍCIO • 3. BENEFÍCIO...`
                 dieTitleEl.textContent = slide5DieImages[mode].title;
             }
 
-            // Hide or show slides 6, 7 (Frame Ultimate) and 6-slim (Frame Slim)
+            // Hide or show slides 6, 7 (Frame Ultimate) and 6-slim, 7-slim (Frame Slim)
             const s6 = document.getElementById('slide-6');
             const s7 = document.getElementById('slide-7');
             const s6Slim = document.getElementById('slide-6-slim');
+            const s7Slim = document.getElementById('slide-7-slim');
             if (s6) s6.style.display = (mode === 'standard') ? '' : 'none';
             if (s7) s7.style.display = (mode === 'standard') ? '' : 'none';
             if (s6Slim) s6Slim.style.display = (mode === 'ultimate') ? '' : 'none';
+            if (s7Slim) s7Slim.style.display = (mode === 'ultimate') ? '' : 'none';
 
             updateDropdownOptions();
 
@@ -1514,12 +1559,13 @@ Apresente no formato: 1. BENEFÍCIO • 2. BENEFÍCIO • 3. BENEFÍCIO...`
                 `;
             } else {
                 dp.innerHTML = `
-                    <option value="1">Slide 1 de 6 • Arte 2D FRENTE & Naming</option>
-                    <option value="2">Slide 2 de 6 • Mostruário (Lotes 1 & 2)</option>
-                    <option value="3">Slide 3 de 6 • Mostruário (Lotes 3 & 4)</option>
-                    <option value="4">Slide 4 de 6 • Padronização 2D Frente</option>
-                    <option value="5">Slide 5 de 6 • Mockup 2D Faca Slim</option>
-                    <option value="6">Slide 6 de 6 • Mockup 3D Estojo Transparente</option>
+                    <option value="1">Slide 1 de 7 • Arte 2D FRENTE & Naming</option>
+                    <option value="2">Slide 2 de 7 • Mostruário (Lotes 1 & 2)</option>
+                    <option value="3">Slide 3 de 7 • Mostruário (Lotes 3 & 4)</option>
+                    <option value="4">Slide 4 de 7 • Padronização 2D Frente</option>
+                    <option value="5">Slide 5 de 7 • Mockup 2D Faca Slim</option>
+                    <option value="6">Slide 6 de 7 • Arte 2D Verso Essencial</option>
+                    <option value="7">Slide 7 de 7 • Mockup 3D Estojo Transparente</option>
                 `;
             }
             dp.value = currentSlide;
@@ -1610,6 +1656,7 @@ Apresente no formato: 1. BENEFÍCIO • 2. BENEFÍCIO • 3. BENEFÍCIO...`
                 p6: p6Content,
                 p4b: data.p4bText || '',
                 p7: data.p7Text || '',
+                'p4b-slim': db.ultimate.p4bText || '',
                 'p7-slim': db.ultimate.p7Text || ''
             };
 
@@ -1648,7 +1695,8 @@ Apresente no formato: 1. BENEFÍCIO • 2. BENEFÍCIO • 3. BENEFÍCIO...`
             if (currentFrameMode === 'standard') {
                 return document.getElementById(`slide-${slideIndex}`);
             } else {
-                return document.getElementById('slide-6-slim');
+                if (slideIndex === 6) return document.getElementById('slide-6-slim');
+                if (slideIndex === 7) return document.getElementById('slide-7-slim');
             }
         }
 

@@ -817,8 +817,9 @@ Para cada nome apresente estritamente o formato: NOME - SUBTÍTULO sugerido.</di
                         <div class="notes-header">Observações & Instruções para o Gestor</div>
                         <ul class="notes-list">
                             <li><strong>Regra de Proporção do Logo (~30%)</strong>: O conjunto do logotipo da marca e o subtítulo deve ser compacto, ocupando cerca de 30% a 35% da largura da folha (escala reduzida, discreta e premium). NUNCA ampliado em tela cheia.</li>
-                            <li><strong>Regra do Terço Superior & Área Limpa (70%)</strong>: O bloco de marca fica centralizado no topo com margens de respiro generosas, deixando cerca de 70% da altura inferior totalmente limpa para o design de fundo e a faca de corte das lentes.</li>
+                            <li><strong>Regra do Terço Superior & Área Limpa (70%)</strong>: O bloco de marca fica no topo com margens de respiro generosas (centralizado no Ultimate e no quadrante superior direito no Slim), deixando cerca de 70% da altura inferior totalmente limpa para o design de fundo e a faca de corte das lentes.</li>
                             <li><strong>Fundo 100% Limpo e Sem Elementos de Canto</strong>: O fundo gráfico deve ser totalmente contínuo, homogêneo e minimalista, sem arcos de cantoneira, ondas luminosas de canto ou molduras perimetrais que possam poluir a faca de corte das lentes.</li>
+                            <li><strong>Dica para Captura Perfeita do Logo no Midjourney</strong>: Anexe a imagem com recorte aproximado da logo em alta definição e use o parâmetro <code>--iw 2</code> (peso máximo de imagem) já incluso no prompt. O nome e subtítulo da marca são passados entre aspas duplas para disparar o motor tipográfico do Midjourney v6. NUNCA insira palavras com "logo" no <code>--no</code>.</li>
                             <li><strong>Regra das Bordas</strong>: Não colocar textos pequenos nem molduras perto da borda que tornem aparente um possível desalinhamento de corte.</li>
                             <li><strong>Envio de Arquivos</strong>: Anexe 1º a Folha de Impressão (gabarito em branco) e 2º a foto da logo do cliente.</li>
                         </ul>
@@ -1354,11 +1355,13 @@ Para cada nome apresente estritamente o formato: NOME - SUBTÍTULO sugerido.</di
             standard: {
                 badge: 'LINHA FRAME ULTIMATE',
                 proporcao: '47:75',
-                p1Text: `Layout gráfico em 2D plano para a face frontal de cartela retangular de protetor de lente de câmera, imagem retangular 2D estritamente plana, proporção 47:75. Reproduza o estilo visual, cores da marca, fundo e tipografia da imagem de referência anexada.
+                p1Text: `Layout gráfico em 2D plano para a face frontal de cartela retangular de protetor de lente de câmera, imagem retangular 2D estritamente plana, proporção 47:75.
+
+REPRODUÇÃO OBRIGATÓRIA DO LOGOTIPO DA MARCA E LETTERING: É MANDATÓRIO reproduzir com máxima fidelidade, nitidez e alta definição o logotipo e a identidade da marca da imagem de referência anexada, exibindo de forma destacada e perfeitamente legível o [BLOCO_LOGO_TEXTO]. Tipografia nítida, elegante e de alto contraste em acabamento dourado/metálico premium idêntico ao da referência sobre fundo escuro.
 
 FUNDO 100% LIMPO E SEM ELEMENTOS DE CANTO: O fundo gráfico deve ser totalmente contínuo, homogêneo, suave e minimalista em toda a extensão da cartela, sem nenhum grafismo decorativo nas extremidades. NUNCA adicione elementos de canto, linhas curvas cortando as quinas, feixes luminosos diagonais nos vértices, arcos de cantoneira, ondas luminosas de canto ou molduras perimetrais. Todos os 4 cantos da cartela devem permanecer completamente limpos, lisos e desobstruídos. NUNCA desenhe círculos brancos, anéis ou furos simulados na arte gráfica.
 
-PROPORÇÃO E ESCALA DO LOGOTIPO E SUBTÍTULO (~30% DA LARGURA): Reduza a escala do bloco central reunindo o logotipo da marca e o subtítulo '[SUBTITULO]' para ocupar uma proporção compacta e refinada de aproximadamente 30% a 35% da largura da folha de impressão (tamanho discreto, elegante e minimalista de luxo, NÃO ampliado, NÃO gigante). Posicione o bloco centralizado no terço superior da cartela com amplas margens de respiro ao redor e no topo, deixando os 65% a 70% inferiores da folha totalmente livres e limpos para o fundo artístico e a área dos furos de corte das lentes. Imagem retangular plana e contínua sem ícones de benefícios, sem textos pequenos perto da borda, sem molduras perimetrais. --ar 47:75 --no corner elements, no corner lines, no corner curves, no corner waves, no corner arcs, no corner graphics, no corner decorations, no corner accents, no corner frames, no corner borders, no diagonal corner lines, no corner light beams, no corner ribbons, no corner ornaments, no edge borders, no oversized logo, no giant logo, no enlarged logo, no blown up logo, no edge-to-edge logo, no white circles, no solid white shapes, no painted circles, no drawn holes, no cutout shapes, no white fills, no icons, no badges, no box, no cutouts, no 3d mockup, no text on borders, no thin borders`,
+PROPORÇÃO E ESCALA DO LOGOTIPO E SUBTÍTULO (~30% DA LARGURA): Posicione o bloco do logotipo e subtítulo centralizado no terço superior da cartela com amplas margens de respiro ao redor e no topo, ocupando uma proporção compacta e refinada de aproximadamente 30% a 35% da largura da cartela (tamanho discreto, elegante e minimalista de luxo, sem encostar nas bordas), deixando os 65% a 70% inferiores da folha totalmente livres e limpos para o fundo artístico e a área dos furos de corte das lentes. Imagem retangular plana e contínua sem ícones de benefícios, sem textos pequenos perto da borda, sem molduras perimetrais. --ar 47:75 --iw 2 --no corner elements, no corner lines, no corner curves, no corner waves, no corner arcs, no corner graphics, no corner decorations, no corner accents, no corner frames, no corner borders, no diagonal corner lines, no corner light beams, no corner ribbons, no corner ornaments, no edge borders, no white circles, no solid white shapes, no painted circles, no drawn holes, no cutout shapes, no white fills, no icons, no badges, no box, no cutouts, no 3d mockup, no text on borders, no thin borders`,
 
                 pl1Text: `Adaptação multi-estilo Lote 1 em grade 2x2 para Frame de Lente: Mantenha a proporção 47:75. CADA QUADRO DEVE APLICAR UMA HARMONIZAÇÃO TIPOGRÁFICA COMPLETA DE LETTERING, FONTE E ACABAMENTO VISUAL DE FORMA UNIFICADA TANTO PARA O LOGO DA MARCA QUANTO PARA O SUBTÍTULO '[SUBTITULO]' (ex: no estilo cromado/dourado/neon, aplique o efeito no logo E no subtítulo). Gere uma grade 2x2 com 4 quadros paralelos onde CADA QUADRO APLICA UM ESTILO ARTÍSTICO E UMA POSIÇÃO EXCLUSIVA DE PROTETORES DE LENTES:
 • Quadro 1 (Minimalista Clean): Fundo clean, lettering sans-serif, vista da parte traseira inteira do smartphone Prata em pé e reto verticalmente com o módulo de câmeras destacando os 3 protetores de lentes instalados nas câmeras.
@@ -1419,18 +1422,19 @@ O bloco do logo da marca e subtítulo '[SUBTITULO]' fica posicionado no terço s
             ultimate: {
                 badge: 'LINHA FRAME SLIM',
                 proporcao: '318:351',
-                p1Text: `Layout gráfico em 2D plano para a folha de impressão de cartela de protetor de lente de câmera (Linha Smart Frame Slim), imagem 2D estritamente plana na proporção física real da folha de impressão '318:351' (318 mm de largura por 351 mm de altura). Arte 100% limpa e abstrata focada na identidade visual de fundo. Reproduza com fidelidade estética o estilo visual de fundo, cores da marca, textura e logo da imagem de referência anexada.
+                p1Text: `Layout gráfico em 2D plano para a folha de impressão de cartela de protetor de lente de câmera (Linha Smart Frame Slim), imagem 2D estritamente plana na proporção física real da folha de impressão '318:351' (318 mm de largura por 351 mm de altura).
 
-FUNDO 100% LIMPO E SEM ELEMENTOS DE CANTO: O fundo gráfico deve ser totalmente contínuo, homogêneo, suave e minimalista em toda a extensão da folha de impressão, sem nenhum grafismo decorativo nas extremidades. NUNCA adicione elementos de canto, linhas curvas cortando as quinas ou a base, feixes luminosos diagonais nos vértices, arcos de cantoneira, ondas luminosas de canto ou molduras perimetrais. Todos os 4 cantos da folha e bordas devem permanecer completamente limpos, lisos e desobstruídos. NUNCA desenhe círculos brancos, anéis ou furos simulados na arte gráfica.
+REPRODUÇÃO OBRIGATÓRIA DO LOGOTIPO DA MARCA E LETTERING: É MANDATÓRIO reproduzir com máxima fidelidade, nitidez e alta definição o logotipo e a identidade da marca da imagem de referência anexada, exibindo de forma destacada e perfeitamente legível o [BLOCO_LOGO_TEXTO]. Tipografia nítida, elegante e de alto contraste em acabamento dourado/metálico premium idêntico ao da referência sobre fundo escuro.
 
-POSICIONAMENTO GEOMÉTRICO DO LOGO NA FOLHA DE 318 × 351 mm (ORIGEM NO CANTO SUPERIOR ESQUERDO):
-- Redução de Escala: Reduza o bloco do logotipo da marca e do subtítulo '[SUBTITULO]' em 30% (escala compacta, elegante e minimalista de luxo).
-- Quadrante Superior Direito da Folha: Posicione o bloco da logo à direita a partir de X > 175 mm (fora da faixa do eixo de corte dos furos na esquerda em X = 118,9 mm) e terminando antes de X = 284 mm (respeitando a margem direita da faca de corte da cartela).
-- Recuo Vertical Seguro do Topo: Mantenha o topo da logo estritamente posicionado abaixo de Y ≥ 40 mm a partir da borda superior da folha (NUNCA colado no topo absoluto da folha de 351 mm, respeitando o respiro de 10 mm abaixo da linha de corte do topo da cartela física que fica em Y = 30 mm).
-- Área Livre Reservada: Deixe toda a metade esquerda (especialmente o eixo de corte em X = 118,9 mm) e toda a metade inferior 100% limpas e desobstruídas, compostas exclusivamente pela arte de fundo abstrata contínua.
-- Imagem plana contínua sem ilustração de celulares, sem ilustrações de lentes de câmera, sem anéis de protetores, sem textos minúsculos perto das bordas e sem molduras perimetrais.
+POSICIONAMENTO GEOMÉTRICO DO LOGO NO QUADRANTE SUPERIOR DIREITO:
+- Quadrante Superior Direito da Folha: Posicione o bloco do logotipo à direita a partir de X > 175 mm (fora da faixa do eixo de corte dos furos na esquerda em X = 118,9 mm) e terminando antes de X = 284 mm (respeitando a margem direita da faca de corte da cartela).
+- Escala Compacta (~30% da largura): Mantenha o bloco do logotipo compacto, refinado e minimalista de luxo (ocupando cerca de 30% a 35% da largura da folha), com amplo respiro ao redor e sem encostar nas bordas.
+- Recuo Vertical Seguro do Topo: Mantenha o topo da logo estritamente posicionado abaixo de Y ≥ 40 mm a partir da borda superior da folha (respeitando o respiro de 10 mm abaixo da linha de corte do topo da cartela física que fica em Y = 30 mm).
+- Área Livre Reservada: Deixe toda a metade esquerda (especialmente o eixo de corte em X = 118,9 mm) e toda a metade inferior 100% limpas e desobstruídas, compostas exclusivamente pelo fundo contínuo para a aplicação da faca de corte das lentes.
 
---ar 318:351 --no corner elements, no corner lines, no corner curves, no corner waves, no corner arcs, no corner graphics, no corner decorations, no corner accents, no corner frames, no corner borders, no diagonal corner lines, no corner light beams, no corner ribbons, no corner ornaments, no edge borders, no white circles, no solid white shapes, no painted circles, no smartphone, no phone, no camera lens, no protector rings, no lens circles, no DSLR lens, no photography camera, no icons, no badges, no box, no cutouts, no drawn holes, no 3d mockup, no text on borders, no thin borders, no centered logo, no logo on left, no logo touching top edge, no top edge collision`,
+FUNDO 100% LIMPO E SEM ELEMENTOS DE CANTO: O fundo gráfico deve ser totalmente contínuo, homogêneo, suave e minimalista em toda a extensão da folha de impressão, sem nenhum grafismo decorativo nas extremidades. NUNCA adicione elementos de canto, linhas curvas cortando as quinas ou a base, feixes luminosos diagonais nos vértices, arcos de cantoneira, ondas luminosas de canto ou molduras perimetrais. Todos os 4 cantos da folha e bordas devem permanecer completamente limpos, lisos e desobstruídos. NUNCA desenhe círculos brancos, anéis ou furos simulados na arte gráfica. Imagem plana contínua sem ilustração de celulares, sem ilustrações de lentes de câmera, sem anéis de protetores, sem textos minúsculos perto das bordas e sem molduras perimetrais.
+
+--ar 318:351 --iw 2 --no corner elements, no corner lines, no corner curves, no corner waves, no corner arcs, no corner graphics, no corner decorations, no corner accents, no corner frames, no corner borders, no diagonal corner lines, no corner light beams, no corner ribbons, no corner ornaments, no edge borders, no white circles, no solid white shapes, no painted circles, no smartphone, no phone, no camera lens, no protector rings, no lens circles, no DSLR lens, no photography camera, no icons, no badges, no box, no cutouts, no drawn holes, no 3d mockup, no text on borders, no thin borders`,
 
                 pl1Text: `Adaptação multi-estilo Lote 1 em grade 2x2 para Folha Frame Slim 318 × 351 mm: Mantenha a proporção vertical 318:351. Posicione o logotipo da marca e o subtítulo '[SUBTITULO]' reduzidos em 30% no QUADRANTE SUPERIOR DIREITO (recuados da borda do topo e alinhados à direita), totalmente preservados nos 70% livres à direita, fora do eixo de corte das lentes de câmera (X ≈ 35% na esquerda). Gere uma grade 2x2 com 4 quadros paralelos onde CADA QUADRO APLICA UM ESTILO ARTÍSTICO E UMA PALETA CONCEITUAL PURA DE FUNDO (SEM NENHUM CELULAR OU LENTE DESENHADA):
 • Quadro 1 (Minimalista Clean): Fundo minimalista clean de alto impacto, iluminação suave de estúdio, textura sofisticada e lettering sans-serif no topo.
@@ -1464,7 +1468,7 @@ POSICIONAMENTO GEOMÉTRICO DO LOGO NA FOLHA DE 318 × 351 mm (ORIGEM NO CANTO SU
 
                 p3cText: `Variação de cores 2x2 para Frame Slim (318:351): Gere 4 novas opções em grade 2x2 explorando paletas de cores distintas, vibrantes e contrastantes entre si em cada quadro, preservando perfeitamente o logo da marca, o subtítulo '[SUBTITULO]' e o estilo de fundo abstrato da imagem anexada. Mantenha a arte 100% limpa sem celulares, lentes ou molduras perimetrais. --ar 318:351 --no smartphone, no phone, no camera lens, no protector rings, no lens circles, no DSLR lens, no photography camera, no icons, no badges, no box, no cutouts, no drawn holes, no 3d mockup, no text on borders, no thin borders`,
 
-                p4Text: `Padronização rígida de proporção na Folha de Impressão 318 × 351 mm (Frame Slim): Pegue exclusivamente a arte escolhida da imagem anexada e renderize-a isolada como uma arte 2D plana contínua preenchendo 100% da tela na proporção física real da folha de impressão '318:351' (318 mm × 351 mm). Re-enquadre e preserve integralmente TODOS os elementos gráficos da imagem anexada: mantenha perfeitamente o logotipo da marca e o subtítulo '[SUBTITULO]' reduzidos em 30% posicionados no QUADRANTE SUPERIOR DIREITO da folha (com recuo vertical de Y ≥ 40 mm abaixo do topo da folha e alinhado a partir de X > 175 mm em direção à borda direita X ≤ 284 mm), totalmente preservados na área segura da direita, fora do eixo de corte dos furos de lente na esquerda (X = 118,9 mm), e a arte de fundo abstrata contínua preenchendo 100% da folha. Fundo 100% limpo, contínuo e sem elementos de canto, arcos ou ondas nas quinas. Preencha 100% do enquadramento sem adicionar ilustrações de celulares, lentes de câmera, molduras perimetrais ou textos minúsculos perto das bordas. --ar 318:351 --no corner elements, no corner lines, no corner curves, no corner waves, no corner arcs, no corner graphics, no corner decorations, no corner accents, no corner frames, no corner borders, no diagonal corner lines, no corner light beams, no corner ribbons, no corner ornaments, no edge borders, no smartphone, no phone, no camera lens, no protector rings, no lens circles, no die-cut lines, no knife lines, no cutouts, no red contour lines, no holes, no 3d mockup, no text on borders, no thin borders, no centered logo, no logo on left, no logo touching top edge, no top edge collision`,
+                p4Text: `Padronização rígida de proporção na Folha de Impressão 318 × 351 mm (Frame Slim): Pegue exclusivamente a arte escolhida da imagem anexada e renderize-a isolada como uma arte 2D plana contínua preenchendo 100% da tela na proporção física real da folha de impressão '318:351' (318 mm × 351 mm). Re-enquadre e preserve integralmente TODOS os elementos gráficos da imagem anexada: mantenha perfeitamente o logotipo da marca e o subtítulo ([BLOCO_LOGO_TEXTO]) reduzidos em 30% posicionados no QUADRANTE SUPERIOR DIREITO da folha (com recuo vertical de Y ≥ 40 mm abaixo do topo da folha e alinhado a partir de X > 175 mm em direção à borda direita X ≤ 284 mm), totalmente preservados na área segura da direita, fora do eixo de corte dos furos de lente na esquerda (X = 118,9 mm), e a arte de fundo abstrata contínua preenchendo 100% da folha. Fundo 100% limpo, contínuo e sem elementos de canto, arcos ou ondas nas quinas. Preencha 100% do enquadramento sem adicionar ilustrações de celulares, lentes de câmera, molduras perimetrais ou textos minúsculos perto das bordas. --ar 318:351 --iw 2 --no corner elements, no corner lines, no corner curves, no corner waves, no corner arcs, no corner graphics, no corner decorations, no corner accents, no corner frames, no corner borders, no diagonal corner lines, no corner light beams, no corner ribbons, no corner ornaments, no edge borders, no smartphone, no phone, no camera lens, no protector rings, no lens circles, no die-cut lines, no knife lines, no cutouts, no red contour lines, no holes, no 3d mockup, no text on borders, no thin borders`,
 
                 cuts: {
                     1: `Máscara técnica de corte 2D proporcional calibrada na Folha de Impressão 318 × 351 mm (Frame Slim - Faca Corte Modelo 1): Utilize a primeira imagem anexada (Gabarito da Faca Corte 1) estritamente como máscara transparente de perfuração e corte. Projete 100% do design gráfico da segunda imagem anexada por dentro das dimensões reais da Folha de Impressão de 318 mm × 351 mm (proporção vertical 318:351), mantendo a arte íntegra e sem distorção geométrica.
@@ -1676,10 +1680,36 @@ Apresente no formato: 1. BENEFÍCIO • 2. BENEFÍCIO • 3. BENEFÍCIO...`
                 'p7-slim': db.ultimate.p7Text || ''
             };
 
+            let brandName = subtitulo;
+            let subText = '';
+            if (subtitulo.includes(' - ')) {
+                const parts = subtitulo.split(' - ');
+                brandName = parts[0].trim();
+                subText = parts.slice(1).join(' - ').trim();
+            } else if (subtitulo.includes(' – ')) {
+                const parts = subtitulo.split(' – ');
+                brandName = parts[0].trim();
+                subText = parts.slice(1).join(' – ').trim();
+            } else if (subtitulo.includes('-')) {
+                const parts = subtitulo.split('-');
+                brandName = parts[0].trim();
+                subText = parts.slice(1).join('-').trim();
+            }
+
+            let blocoLogoTexto = '';
+            if (subText) {
+                blocoLogoTexto = `nome da marca com a inscrição "${brandName}" e o subtítulo "${subText}" logo abaixo`;
+            } else {
+                blocoLogoTexto = `nome da marca com a inscrição "${brandName}"`;
+            }
+
             for (const key in map) {
                 const el = document.getElementById(key);
                 if (el && map[key]) {
                     let updatedText = map[key]
+                        .replace(/\[BLOCO_LOGO_TEXTO\]/g, blocoLogoTexto)
+                        .replace(/\[NOME_MARCA\]/g, brandName)
+                        .replace(/\[SUB_TEXTO\]/g, subText)
                         .replace(/\[SUBTITULO\]/g, subtitulo)
                         .replace(/\[BENEFICIOS\]/g, beneficios)
                         .replace(/\[RODAPE_REDES\]/g, rodapeRedes);

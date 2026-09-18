@@ -791,14 +791,14 @@ Para cada nome apresente estritamente o formato: NOME - SUBTÍTULO sugerido.</di
 						<button class="read-more-btn" onclick="toggleReadMore('pn1', this)">Ler mais <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
                     </div>
 
-                    <!-- CAIXA DE ENTRADA DO LOGOTIPO / NOME & SUBTÍTULO -->
+                    <!-- CAIXA DE ENTRADA DO NOME DA MARCA / SUBTÍTULO -->
                     <div class="prompt-card" style="background: rgba(2, 132, 199, 0.04); border-color: rgba(2, 132, 199, 0.2);">
                         <div class="prompt-card-header" style="margin-bottom: 0.5rem;">
-                            <span class="prompt-label" style="color: var(--accent-cyan);">Nome da Marca / Logotipo & Subtítulo Comercial:</span>
+                            <span class="prompt-label" style="color: var(--accent-cyan);">Digite ou Cole Aqui o Nome Escolhido no N1 (ou Nome da Marca / Subtítulo):</span>
                         </div>
                         <input type="text" id="inputSubtitulo" class="var-input" style="width: 100%; font-size: 1rem; padding: 10px 14px;" value="DJ.Studio" oninput="updatePrompts()" placeholder="Ex: DJ.Studio ou DIAVEN - DIAMOND-CLASS OPTICAL SHIELD">
                         <div style="margin-top: 0.5rem; font-size: 0.78rem; color: #64748b; line-height: 1.4;">
-                            💡 <strong>Extração de Logo da Imagem</strong>: Se o seu cliente já tem uma logo (como o arquivo da marca anexado), envie a imagem da logo no ChatGPT ou Midjourney. O prompt está instruído a <strong>extrair fielmente o símbolo gráfico, ícone, cores e tipografia da imagem anexada</strong>. O campo acima serve para reforçar o nome exato e adicionar um subtítulo comercial opcional.
+                            💡 <strong>Dica da Logo (Imagem 2)</strong>: O logotipo oficial deve ser anexado como <strong>Imagem 2</strong> (logo após a folha de impressão da Imagem 1). O logotipo fica posicionado acima. Caso a marca não tenha subtítulo, apague o subtítulo deste campo e deixe <strong>apenas o nome da marca</strong> (ex: <code>DJ.Studio</code>). O prompt ajusta automaticamente para exibir apenas o nome sem forçar nenhum subtítulo!
                         </div>
                     </div>
 
@@ -825,7 +825,8 @@ Para cada nome apresente estritamente o formato: NOME - SUBTÍTULO sugerido.</di
                             <li><strong>Fundo 100% Limpo e Sem Elementos de Canto</strong>: O fundo gráfico deve ser totalmente contínuo, homogêneo e minimalista, sem arcos de cantoneira, ondas luminosas de canto ou molduras perimetrais que possam poluir a faca de corte das lentes.</li>
                             <li><strong>Dica para Captura Perfeita do Logo no Midjourney</strong>: Anexe a imagem com recorte aproximado da logo em alta definição e use o parâmetro <code>--iw 2</code> (peso máximo de imagem) já incluso no prompt. O nome e subtítulo da marca são passados entre aspas duplas para disparar o motor tipográfico do Midjourney v6. NUNCA insira palavras com "logo" no <code>--no</code>.</li>
                             <li><strong>Regra das Bordas</strong>: Não colocar textos pequenos nem molduras perto da borda que tornem aparente um possível desalinhamento de corte.</li>
-                            <li><strong>Envio de Arquivos & Extração de Logo</strong>: Anexe 1º a Folha de Impressão (gabarito em branco) e 2º a imagem da logo do cliente (ex: DJ.Studio). O prompt comanda a IA a <strong>extrair com precisão cirúrgica o símbolo gráfico, ícone vetorial, desenho e cores da imagem anexada</strong>, garantindo que o logo real do cliente seja preservado na embalagem.</li>
+                            <li><strong>Ordem dos Anexos (Imagem 1 e Imagem 2)</strong>: Anexe 1º a Folha de Impressão (gabarito em branco da Imagem 1) e 2º a imagem da logo do cliente como Imagem 2 (ex: arquivo da logo DJ.Studio). O prompt instrui a IA a <strong>extrair com precisão cirúrgica o símbolo gráfico, ícone vetorial, desenho e cores originais da logo da Imagem 2</strong>, posicionando-a no topo.</li>
+                            <li><strong>Posicionamento Acima & Flexibilidade de Subtítulo</strong>: O logotipo fica posicionado <strong>acima</strong> do nome da marca e do subtítulo. Se a marca não tiver subtítulo comercial, basta apagar o subtítulo no campo de entrada e deixar apenas o nome da marca (ex: <code>DJ.Studio</code>). O prompt remove automaticamente qualquer menção a subtítulo e foca na pureza visual da marca.</li>
                         </ul>
                     </div>
 
@@ -1433,7 +1434,9 @@ Para cada nome apresente estritamente o formato: NOME - SUBTÍTULO sugerido.</di
                 proporcao: '47:75',
                 p1Text: `Layout gráfico em 2D plano para a face frontal de cartela retangular de protetor de lente de câmera, imagem retangular 2D estritamente plana, proporção 47:75.
 
-EXTRAÇÃO E REPRODUÇÃO OBRIGATÓRIA DO LOGOTIPO DA IMAGEM ANEXADA: É MANDATÓRIO extrair e reproduzir com máxima fidelidade vetorial, nitidez e alta definição o logotipo oficial da marca da imagem de referência anexada, copiando com exatidão o seu símbolo gráfico, ícone, desenho, cores originais e tipografia idênticos aos da imagem anexada, exibindo de forma destacada e perfeitamente legível [BLOCO_LOGO_TEXTO]. A tipografia e o símbolo devem preservar com precisão absoluta as proporções, o formato e as cores da logo original da referência sobre o fundo da cartela.
+[PARAGRAFO_1_LOGO]
+
+[PARAGRAFO_2_NOME_SUBTITULO]
 
 FUNDO 100% LIMPO E SEM ELEMENTOS DE CANTO: O fundo gráfico deve ser totalmente contínuo, homogêneo, suave e minimalista em toda a extensão da cartela, sem nenhum grafismo decorativo nas extremidades. NUNCA adicione elementos de canto, linhas curvas cortando as quinas, feixes luminosos diagonais nos vértices, arcos de cantoneira, ondas luminosas de canto ou molduras perimetrais. Todos os 4 cantos da cartela devem permanecer completamente limpos, lisos e desobstruídos. NUNCA desenhe círculos brancos, anéis ou furos simulados na arte gráfica.
 
@@ -1471,7 +1474,7 @@ PROPORÇÃO E ESCALA DO LOGOTIPO E SUBTÍTULO (~30% DA LARGURA): Posicione o blo
 
                 p3cText: `Variação de cores 2x2: Gere 4 novas opções em grade 2x2 explorando paletas de cores distintas, vibrantes e contrastantes entre si em cada quadro, preservando perfeitamente o logo da marca, o subtítulo '[SUBTITULO]' e o estilo visual da imagem anexada. Sem textos nas bordas ou molduras perimetrais. --ar 47:75 --no icons, no badges, no box, no cutouts, no drawn holes, no 3d mockup, no text on borders, no thin borders`,
 
-                p4Text: `Padronização rígida de proporção: Pegue exclusivamente a cartela escolhida da imagem anexada e renderize-a isolada como uma arte 2D plana contínua preenchendo 100% da tela na proporção física exata '47:75'. Re-enquadre e preserve integralmente TODOS os elementos gráficos da imagem anexada: mantenha perfeitamente o logotipo oficial da marca extraído com máxima fidelidade da imagem de referência anexada (preservando seu símbolo gráfico, cores e tipografia), acompanhado do subtítulo comercial '[SUBTITULO]' no terço superior e o estilo visual de fundo limpo e contínuo. NUNCA desenhe círculos brancos, anéis ou furos simulados na arte. Preencha 100% do enquadramento sem adicionar molduras perimetrais nem textos minúsculos perto das bordas. --ar 47:75 --no white circles, no solid white shapes, no painted circles, no drawn holes, no white fills, no die-cut lines, no knife lines, no cutouts, no red contour lines, no holes, no 3d mockup, no text on borders, no thin borders`,
+                p4Text: `Padronização rígida de proporção: Pegue exclusivamente a cartela escolhida da imagem anexada e renderize-a isolada como uma arte 2D plana contínua preenchendo 100% da tela na proporção física exata '47:75'. Re-enquadre e preserve integralmente TODOS os elementos gráficos da imagem anexada: mantenha perfeitamente o logotipo oficial da marca extraído da Imagem 2 (posicionado acima) acompanhado de [BLOCO_NOME_SUBTITULO_COMPACTO] no terço superior e o estilo visual de fundo limpo e contínuo. NUNCA desenhe círculos brancos, anéis ou furos simulados na arte. Preencha 100% do enquadramento sem adicionar molduras perimetrais nem textos minúsculos perto das bordas. --ar 47:75 --no white circles, no solid white shapes, no painted circles, no drawn holes, no white fills, no die-cut lines, no knife lines, no cutouts, no red contour lines, no holes, no 3d mockup, no text on borders, no thin borders`,
 
                 p4bText: `Layout gráfico em 2D plano para a face traseira (verso) de cartela retangular de protetor de lente de câmera de smartphone, proporção física 47:75. Mantenha 100% da identidade visual, cores, textura e degradê de fundo da imagem de referência anexada, com o logo da marca '[SUBTITULO]' discreto e compacto no topo.
 
@@ -1491,7 +1494,7 @@ A cartela física segue estritamente a silhueta de corte externa e perfurações
 
 Na face frontal da cartela, exibe com precisão o acabamento dos cortes da Imagem 1: os três furos circulares são orifícios físicos reais vazados e perfurados no papel cartão, revelando o fundo neutro do estúdio através das aberturas, sem qualquer preenchimento branco ou desenho de lentes.
 
-ESTAMPA GRÁFICA DA CARTELA (REMOÇÃO DE LENTES & LOGO NO TERÇO SUPERIOR): A superfície inteira da cartela reproduz com fidelidade a textura, as cores e o cenário de fundo contínuo da Imagem 2. No terço superior da cartela, exiba com destaque e nitidez o [BLOCO_LOGO_TEXTO]. A área abaixo e ao redor dos furos circulares deve exibir APENAS a continuação do fundo gráfico limpo e texturizado da embalagem, ELIMINANDO E REMOVENDO completamente qualquer ilustração de câmera fotográfica, smartphone, anéis de lente ou película solta da Imagem 2. A cartela física recortada funciona como um suporte gráfico elegante, premium e minimalista.
+ESTAMPA GRÁFICA DA CARTELA (REMOÇÃO DE LENTES & LOGO NO TERÇO SUPERIOR): A superfície inteira da cartela reproduz com fidelidade a textura, as cores e o cenário de fundo contínuo da Imagem 2. No terço superior da cartela, exiba com destaque e máxima fidelidade o logotipo oficial da marca extraído da Imagem 2 anexada (posicionado no topo) e, logo abaixo, [BLOCO_NOME_SUBTITULO_COMPACTO]. A área abaixo e ao redor dos furos circulares deve exibir APENAS a continuação do fundo gráfico limpo e texturizado da embalagem, ELIMINANDO E REMOVENDO completamente qualquer ilustração de câmera fotográfica, smartphone, anéis de lente ou película solta da Imagem 2. A cartela física recortada funciona como um suporte gráfico elegante, premium e minimalista.
 
 Cenário de estúdio: fundo minimalista cinza claro com iluminação difusa suave de softbox e sombra de contato natural na base da mesa. Cartela impressa em papel cartão rígido premium com acabamento acetinado fosco e bordas de corte nítidas, apresentada como peça física isolada.
 
@@ -1511,7 +1514,9 @@ O bloco do logo da marca e subtítulo '[SUBTITULO]' fica posicionado no terço s
                 proporcao: '318:351',
                 p1Text: `Layout gráfico em 2D plano para a folha de impressão de cartela de protetor de lente de câmera (Linha Smart Frame Slim), imagem 2D estritamente plana na proporção física real da folha de impressão '318:351' (318 mm de largura por 351 mm de altura).
 
-EXTRAÇÃO E REPRODUÇÃO OBRIGATÓRIA DO LOGOTIPO DA IMAGEM ANEXADA: É MANDATÓRIO extrair e reproduzir com máxima fidelidade vetorial, nitidez e alta definição o logotipo oficial da marca da imagem de referência anexada, copiando com exatidão o seu símbolo gráfico, ícone, desenho, cores originais e tipografia idênticos aos da imagem anexada, exibindo de forma destacada e perfeitamente legível [BLOCO_LOGO_TEXTO]. A tipografia e o símbolo devem preservar com precisão absoluta as proporções, o formato e as cores da logo original da referência sobre o fundo da cartela.
+[PARAGRAFO_1_LOGO]
+
+[PARAGRAFO_2_NOME_SUBTITULO]
 
 POSICIONAMENTO GEOMÉTRICO DO LOGO NO QUADRANTE SUPERIOR DIREITO:
 - Quadrante Superior Direito da Folha: Posicione o bloco do logotipo à direita a partir de X > 175 mm (fora da faixa do eixo de corte dos furos na esquerda em X = 118,9 mm) e terminando antes de X = 284 mm (respeitando a margem direita da faca de corte da cartela).
@@ -1564,7 +1569,7 @@ A cartela física segue estritamente a silhueta de corte externa e perfurações
 
 Na face frontal da cartela, exibe com precisão as perfurações da Imagem 1: os dois orifícios circulares são cortes físicos vazados e perfurados no papel cartão, revelando o plano de fundo do estúdio através deles, sem círculos brancos pintados.
 
-ESTAMPA GRÁFICA DA CARTELA (REMOÇÃO DE APARELHO/LENTES & LOGO NO QUADRANTE DIREITO): A superfície inteira da cartela reproduz a textura, cores e gradiente contínuo da Imagem 2. No quadrante superior direito da cartela (afastado do eixo de corte dos furos), exiba com destaque e proporção equilibrada o [BLOCO_LOGO_TEXTO]. A área ao redor dos furos vazados deve exibir APENAS a continuação do fundo gráfico limpo da embalagem, ELIMINANDO E REMOVENDO completamente qualquer ilustração de smartphone, anéis de lente ou película solta da Imagem 2. A cartela funciona como um suporte gráfico elegante e minimalista.
+ESTAMPA GRÁFICA DA CARTELA (REMOÇÃO DE APARELHO/LENTES & LOGO NO QUADRANTE DIREITO): A superfície inteira da cartela reproduz a textura, cores e gradiente contínuo da Imagem 2. No quadrante superior direito da cartela (afastado do eixo de corte dos furos), exiba com destaque, proporção equilibrada e máxima fidelidade o logotipo oficial da marca extraído da Imagem 2 anexada (posicionado no topo) e, logo abaixo, [BLOCO_NOME_SUBTITULO_COMPACTO]. A área ao redor dos furos vazados deve exibir APENAS a continuação do fundo gráfico limpo da embalagem, ELIMINANDO E REMOVENDO completamente qualquer ilustração de smartphone, anéis de lente ou película solta da Imagem 2. A cartela funciona como um suporte gráfico elegante e minimalista.
 
 Cenário de estúdio: fundo minimalista cinza claro com iluminação difusa suave e sombra de contato natural na base da mesa. Cartela impressa em papel cartão rígido premium com acabamento acetinado fosco, apresentada como peça física isolada.
 
@@ -1867,25 +1872,42 @@ Apresente no formato: 1. BENEFÍCIO • 2. BENEFÍCIO • 3. BENEFÍCIO...`
                 subText = parts.slice(1).join('-').trim();
             }
 
-            let blocoLogoTexto = '';
-            if (brandName) {
-                if (subText) {
-                    blocoLogoTexto = `o logotipo oficial da marca extraído com máxima fidelidade vetorial da imagem de referência anexada (reproduzindo exatamente o mesmo símbolo gráfico, ícone, cores originais e tipografia da marca "${brandName}") e, logo abaixo, o subtítulo comercial: "${subText}"`;
-                } else {
-                    blocoLogoTexto = `o logotipo oficial da marca extraído com máxima fidelidade vetorial da imagem de referência anexada (reproduzindo exatamente o mesmo símbolo gráfico, ícone, cores originais e tipografia da marca "${brandName}")`;
-                }
+            // PARÁGRAFO 1: O lugar do logotipo anexado (Imagem 2, enviado logo após a folha de impressão)
+            let paragrafo1Logo = '';
+            if (currentFrameMode === 'standard') {
+                paragrafo1Logo = `EXTRAÇÃO E POSICIONAMENTO DO LOGOTIPO (IMAGEM 2 ANEXADA): Posicione no topo da cartela (centralizado no terço superior) o logotipo oficial da marca anexado como Imagem 2 (enviado logo após a folha de impressão da Imagem 1). É mandatório extrair e reproduzir com máxima fidelidade vetorial e nitidez exatamente o mesmo símbolo gráfico, ícone, desenho e cores originais da logo da imagem anexada, preservando a identidade visual da marca para ser extraída e mantida com precisão em todos os próximos prompts.`;
             } else {
-                blocoLogoTexto = `o logotipo oficial da marca extraído com máxima fidelidade vetorial da imagem de referência anexada (reproduzindo exatamente o mesmo símbolo gráfico, ícone, cores originais e tipografia original da marca)`;
+                paragrafo1Logo = `EXTRAÇÃO E POSICIONAMENTO DO LOGOTIPO (IMAGEM 2 ANEXADA): Posicione no topo da folha (no quadrante superior direito a partir de X > 175 mm, fora do eixo de corte dos furos da esquerda) o logotipo oficial da marca anexado como Imagem 2 (enviado logo após a folha de impressão da Imagem 1). É mandatório extrair e reproduzir com máxima fidelidade vetorial e nitidez exatamente o mesmo símbolo gráfico, ícone, desenho e cores originais da logo da imagem anexada, preservando a identidade visual da marca para ser extraída e mantida com precisão em todos os próximos prompts.`;
             }
+
+            // PARÁGRAFO 2: O lugar do nome da marca e subtítulo (abaixo do logo; sem subtítulo se apagado)
+            let paragrafo2NomeSubtitulo = '';
+            let blocoNomeSubtituloCompacto = '';
+
+            if (brandName && subText) {
+                paragrafo2NomeSubtitulo = `POSICIONAMENTO DO NOME DA MARCA E SUBTÍTULO: Logo abaixo do logotipo, exiba de forma alinhada, perfeitamente legível e harmônica o nome da marca "${brandName}" e, logo abaixo deste, o subtítulo comercial: "${subText}".`;
+                blocoNomeSubtituloCompacto = `o nome "${brandName}" com o subtítulo comercial "${subText}" logo abaixo`;
+            } else if (brandName) {
+                paragrafo2NomeSubtitulo = `POSICIONAMENTO DO NOME DA MARCA: Logo abaixo do logotipo, exiba de forma alinhada, perfeitamente legível e harmônica o nome da marca "${brandName}". Não adicione nenhum subtítulo comercial (composição limpa focada exclusivamente no logotipo oficial e no nome da marca).`;
+                blocoNomeSubtituloCompacto = `o nome da marca "${brandName}" (sem subtítulo)`;
+            } else {
+                paragrafo2NomeSubtitulo = `POSICIONAMENTO DO NOME DA MARCA: Mantenha a composição limpa e focada exclusivamente no logotipo oficial extraído da Imagem 2, sem subtítulo adicional.`;
+                blocoNomeSubtituloCompacto = `o logotipo oficial da marca`;
+            }
+
+            let blocoLogoTexto = `${paragrafo1Logo}\n\n${paragrafo2NomeSubtitulo}`;
 
             for (const key in map) {
                 const el = document.getElementById(key);
                 if (el && map[key]) {
                     let updatedText = map[key]
+                        .replace(/\[PARAGRAFO_1_LOGO\]/g, paragrafo1Logo)
+                        .replace(/\[PARAGRAFO_2_NOME_SUBTITULO\]/g, paragrafo2NomeSubtitulo)
+                        .replace(/\[BLOCO_NOME_SUBTITULO_COMPACTO\]/g, blocoNomeSubtituloCompacto)
                         .replace(/\[BLOCO_LOGO_TEXTO\]/g, blocoLogoTexto)
                         .replace(/\[NOME_MARCA\]/g, brandName)
                         .replace(/\[SUB_TEXTO\]/g, subText)
-                        .replace(/\[SUBTITULO\]/g, subtitulo)
+                        .replace(/\[SUBTITULO\]/g, subText ? `${brandName} - ${subText}` : brandName)
                         .replace(/\[BENEFICIOS\]/g, beneficios)
                         .replace(/\[RODAPE_REDES\]/g, rodapeRedes);
                     el.textContent = updatedText;

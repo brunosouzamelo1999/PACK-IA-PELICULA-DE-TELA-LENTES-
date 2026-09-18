@@ -791,12 +791,15 @@ Para cada nome apresente estritamente o formato: NOME - SUBTÍTULO sugerido.</di
 						<button class="read-more-btn" onclick="toggleReadMore('pn1', this)">Ler mais <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
                     </div>
 
-                    <!-- CAIXA DE ENTRADA DO SUBTÍTULO -->
+                    <!-- CAIXA DE ENTRADA DO LOGOTIPO / NOME & SUBTÍTULO -->
                     <div class="prompt-card" style="background: rgba(2, 132, 199, 0.04); border-color: rgba(2, 132, 199, 0.2);">
                         <div class="prompt-card-header" style="margin-bottom: 0.5rem;">
-                            <span class="prompt-label" style="color: var(--accent-cyan);">Digite ou Cole Aqui o Nome Escolhido no N1:</span>
+                            <span class="prompt-label" style="color: var(--accent-cyan);">Nome da Marca / Logotipo & Subtítulo Comercial:</span>
                         </div>
-                        <input type="text" id="inputSubtitulo" class="var-input" style="width: 100%; font-size: 1rem; padding: 10px 14px;" value="DIAVEN - DIAMOND-CLASS OPTICAL SHIELD" oninput="updatePrompts()" placeholder="Ex: DIAVEN - DIAMOND-CLASS OPTICAL SHIELD">
+                        <input type="text" id="inputSubtitulo" class="var-input" style="width: 100%; font-size: 1rem; padding: 10px 14px;" value="DJ.Studio" oninput="updatePrompts()" placeholder="Ex: DJ.Studio ou DIAVEN - DIAMOND-CLASS OPTICAL SHIELD">
+                        <div style="margin-top: 0.5rem; font-size: 0.78rem; color: #64748b; line-height: 1.4;">
+                            💡 <strong>Extração de Logo da Imagem</strong>: Se o seu cliente já tem uma logo (como o arquivo da marca anexado), envie a imagem da logo no ChatGPT ou Midjourney. O prompt está instruído a <strong>extrair fielmente o símbolo gráfico, ícone, cores e tipografia da imagem anexada</strong>. O campo acima serve para reforçar o nome exato e adicionar um subtítulo comercial opcional.
+                        </div>
                     </div>
 
                     <!-- PROMPT 1: ARTE 2D LIMPA -->
@@ -822,7 +825,7 @@ Para cada nome apresente estritamente o formato: NOME - SUBTÍTULO sugerido.</di
                             <li><strong>Fundo 100% Limpo e Sem Elementos de Canto</strong>: O fundo gráfico deve ser totalmente contínuo, homogêneo e minimalista, sem arcos de cantoneira, ondas luminosas de canto ou molduras perimetrais que possam poluir a faca de corte das lentes.</li>
                             <li><strong>Dica para Captura Perfeita do Logo no Midjourney</strong>: Anexe a imagem com recorte aproximado da logo em alta definição e use o parâmetro <code>--iw 2</code> (peso máximo de imagem) já incluso no prompt. O nome e subtítulo da marca são passados entre aspas duplas para disparar o motor tipográfico do Midjourney v6. NUNCA insira palavras com "logo" no <code>--no</code>.</li>
                             <li><strong>Regra das Bordas</strong>: Não colocar textos pequenos nem molduras perto da borda que tornem aparente um possível desalinhamento de corte.</li>
-                            <li><strong>Envio de Arquivos</strong>: Anexe 1º a Folha de Impressão (gabarito em branco) e 2º a foto da logo do cliente.</li>
+                            <li><strong>Envio de Arquivos & Extração de Logo</strong>: Anexe 1º a Folha de Impressão (gabarito em branco) e 2º a imagem da logo do cliente (ex: DJ.Studio). O prompt comanda a IA a <strong>extrair com precisão cirúrgica o símbolo gráfico, ícone vetorial, desenho e cores da imagem anexada</strong>, garantindo que o logo real do cliente seja preservado na embalagem.</li>
                         </ul>
                     </div>
 
@@ -1430,7 +1433,7 @@ Para cada nome apresente estritamente o formato: NOME - SUBTÍTULO sugerido.</di
                 proporcao: '47:75',
                 p1Text: `Layout gráfico em 2D plano para a face frontal de cartela retangular de protetor de lente de câmera, imagem retangular 2D estritamente plana, proporção 47:75.
 
-REPRODUÇÃO OBRIGATÓRIA DO LOGOTIPO DA MARCA E LETTERING: É MANDATÓRIO reproduzir com máxima fidelidade, nitidez e alta definição o logotipo e a identidade da marca da imagem de referência anexada, exibindo de forma destacada e perfeitamente legível o [BLOCO_LOGO_TEXTO]. Tipografia nítida, elegante e de alto contraste em acabamento dourado/metálico premium idêntico ao da referência sobre fundo escuro.
+EXTRAÇÃO E REPRODUÇÃO OBRIGATÓRIA DO LOGOTIPO DA IMAGEM ANEXADA: É MANDATÓRIO extrair e reproduzir com máxima fidelidade vetorial, nitidez e alta definição o logotipo oficial da marca da imagem de referência anexada, copiando com exatidão o seu símbolo gráfico, ícone, desenho, cores originais e tipografia idênticos aos da imagem anexada, exibindo de forma destacada e perfeitamente legível [BLOCO_LOGO_TEXTO]. A tipografia e o símbolo devem preservar com precisão absoluta as proporções, o formato e as cores da logo original da referência sobre o fundo da cartela.
 
 FUNDO 100% LIMPO E SEM ELEMENTOS DE CANTO: O fundo gráfico deve ser totalmente contínuo, homogêneo, suave e minimalista em toda a extensão da cartela, sem nenhum grafismo decorativo nas extremidades. NUNCA adicione elementos de canto, linhas curvas cortando as quinas, feixes luminosos diagonais nos vértices, arcos de cantoneira, ondas luminosas de canto ou molduras perimetrais. Todos os 4 cantos da cartela devem permanecer completamente limpos, lisos e desobstruídos. NUNCA desenhe círculos brancos, anéis ou furos simulados na arte gráfica.
 
@@ -1468,7 +1471,7 @@ PROPORÇÃO E ESCALA DO LOGOTIPO E SUBTÍTULO (~30% DA LARGURA): Posicione o blo
 
                 p3cText: `Variação de cores 2x2: Gere 4 novas opções em grade 2x2 explorando paletas de cores distintas, vibrantes e contrastantes entre si em cada quadro, preservando perfeitamente o logo da marca, o subtítulo '[SUBTITULO]' e o estilo visual da imagem anexada. Sem textos nas bordas ou molduras perimetrais. --ar 47:75 --no icons, no badges, no box, no cutouts, no drawn holes, no 3d mockup, no text on borders, no thin borders`,
 
-                p4Text: `Padronização rígida de proporção: Pegue exclusivamente a cartela escolhida da imagem anexada e renderize-a isolada como uma arte 2D plana contínua preenchendo 100% da tela na proporção física exata '47:75'. Re-enquadre e preserve integralmente TODOS os elementos gráficos da imagem anexada: mantenha perfeitamente o logo da marca, subtítulo '[SUBTITULO]' no terço superior e o estilo visual de fundo limpo e contínuo. NUNCA desenhe círculos brancos, anéis ou furos simulados na arte. Preencha 100% do enquadramento sem adicionar molduras perimetrais nem textos minúsculos perto das bordas. --ar 47:75 --no white circles, no solid white shapes, no painted circles, no drawn holes, no white fills, no die-cut lines, no knife lines, no cutouts, no red contour lines, no holes, no 3d mockup, no text on borders, no thin borders`,
+                p4Text: `Padronização rígida de proporção: Pegue exclusivamente a cartela escolhida da imagem anexada e renderize-a isolada como uma arte 2D plana contínua preenchendo 100% da tela na proporção física exata '47:75'. Re-enquadre e preserve integralmente TODOS os elementos gráficos da imagem anexada: mantenha perfeitamente o logotipo oficial da marca extraído com máxima fidelidade da imagem de referência anexada (preservando seu símbolo gráfico, cores e tipografia), acompanhado do subtítulo comercial '[SUBTITULO]' no terço superior e o estilo visual de fundo limpo e contínuo. NUNCA desenhe círculos brancos, anéis ou furos simulados na arte. Preencha 100% do enquadramento sem adicionar molduras perimetrais nem textos minúsculos perto das bordas. --ar 47:75 --no white circles, no solid white shapes, no painted circles, no drawn holes, no white fills, no die-cut lines, no knife lines, no cutouts, no red contour lines, no holes, no 3d mockup, no text on borders, no thin borders`,
 
                 p4bText: `Layout gráfico em 2D plano para a face traseira (verso) de cartela retangular de protetor de lente de câmera de smartphone, proporção física 47:75. Mantenha 100% da identidade visual, cores, textura e degradê de fundo da imagem de referência anexada, com o logo da marca '[SUBTITULO]' discreto e compacto no topo.
 
@@ -1508,7 +1511,7 @@ O bloco do logo da marca e subtítulo '[SUBTITULO]' fica posicionado no terço s
                 proporcao: '318:351',
                 p1Text: `Layout gráfico em 2D plano para a folha de impressão de cartela de protetor de lente de câmera (Linha Smart Frame Slim), imagem 2D estritamente plana na proporção física real da folha de impressão '318:351' (318 mm de largura por 351 mm de altura).
 
-REPRODUÇÃO OBRIGATÓRIA DO LOGOTIPO DA MARCA E LETTERING: É MANDATÓRIO reproduzir com máxima fidelidade, nitidez e alta definição o logotipo e a identidade da marca da imagem de referência anexada, exibindo de forma destacada e perfeitamente legível o [BLOCO_LOGO_TEXTO]. Tipografia nítida, elegante e de alto contraste em acabamento dourado/metálico premium idêntico ao da referência sobre fundo escuro.
+EXTRAÇÃO E REPRODUÇÃO OBRIGATÓRIA DO LOGOTIPO DA IMAGEM ANEXADA: É MANDATÓRIO extrair e reproduzir com máxima fidelidade vetorial, nitidez e alta definição o logotipo oficial da marca da imagem de referência anexada, copiando com exatidão o seu símbolo gráfico, ícone, desenho, cores originais e tipografia idênticos aos da imagem anexada, exibindo de forma destacada e perfeitamente legível [BLOCO_LOGO_TEXTO]. A tipografia e o símbolo devem preservar com precisão absoluta as proporções, o formato e as cores da logo original da referência sobre o fundo da cartela.
 
 POSICIONAMENTO GEOMÉTRICO DO LOGO NO QUADRANTE SUPERIOR DIREITO:
 - Quadrante Superior Direito da Folha: Posicione o bloco do logotipo à direita a partir de X > 175 mm (fora da faixa do eixo de corte dos furos na esquerda em X = 118,9 mm) e terminando antes de X = 284 mm (respeitando a margem direita da faca de corte da cartela).
@@ -1768,7 +1771,7 @@ Apresente no formato: 1. BENEFÍCIO • 2. BENEFÍCIO • 3. BENEFÍCIO...`
 
         // UPDATE PROMPTS REALTIME
         function updatePrompts() {
-            const subtitulo = document.getElementById('inputSubtitulo').value.trim() || 'DIAVEN - DIAMOND-CLASS OPTICAL SHIELD';
+            const subtitulo = document.getElementById('inputSubtitulo').value.trim() || 'DJ.Studio';
             const data = db[currentFrameMode];
 
             const beneficiosEl = document.getElementById('inputBeneficios');
@@ -1865,10 +1868,14 @@ Apresente no formato: 1. BENEFÍCIO • 2. BENEFÍCIO • 3. BENEFÍCIO...`
             }
 
             let blocoLogoTexto = '';
-            if (subText) {
-                blocoLogoTexto = `nome da marca com a inscrição "${brandName}" e o subtítulo "${subText}" logo abaixo`;
+            if (brandName) {
+                if (subText) {
+                    blocoLogoTexto = `o logotipo oficial da marca extraído com máxima fidelidade vetorial da imagem de referência anexada (reproduzindo exatamente o mesmo símbolo gráfico, ícone, cores originais e tipografia da marca "${brandName}") e, logo abaixo, o subtítulo comercial: "${subText}"`;
+                } else {
+                    blocoLogoTexto = `o logotipo oficial da marca extraído com máxima fidelidade vetorial da imagem de referência anexada (reproduzindo exatamente o mesmo símbolo gráfico, ícone, cores originais e tipografia da marca "${brandName}")`;
+                }
             } else {
-                blocoLogoTexto = `nome da marca com a inscrição "${brandName}"`;
+                blocoLogoTexto = `o logotipo oficial da marca extraído com máxima fidelidade vetorial da imagem de referência anexada (reproduzindo exatamente o mesmo símbolo gráfico, ícone, cores originais e tipografia original da marca)`;
             }
 
             for (const key in map) {
